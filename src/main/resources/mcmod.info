@@ -1,0 +1,16 @@
+[
+{
+  "modid": "RolePlaySkills",
+  "name": "RolePlay-Skills",
+  "description": "RolePlay-Skills mod.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Garthi"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
