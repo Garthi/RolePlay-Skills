@@ -51,8 +51,6 @@ public class RecipeBookRemover
         
         this.removeCraftingRecipes(player);
 
-        //this.removeSmeltingRecipes();
-        
         this.addRemoveNote(player);
 
         FurnaceRecipes.instance().addSmelting(Items.POTATO, new ItemStack(Items.BAKED_POTATO), 0F);
@@ -77,6 +75,7 @@ public class RecipeBookRemover
         for (IRecipe irecipe : ForgeRegistries.RECIPES) {
 
             book.unlock(irecipe);
+            book.markSeen(irecipe);
 
             if (this.isRecipeAllow(irecipe)) {
                 book.markNew(irecipe);
