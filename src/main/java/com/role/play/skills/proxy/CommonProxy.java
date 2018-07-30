@@ -3,10 +3,8 @@ package com.role.play.skills.proxy;
 import com.role.play.skills.common.RecipeBookRemover;
 import com.role.play.skills.utilities.ConfigHelper;
 import com.role.play.skills.utilities.RecipeBookRemoverDatabase;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
-import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
@@ -16,9 +14,9 @@ import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
+import net.minecraftforge.fml.common.network.FMLNetworkEvent;
 import org.apache.logging.log4j.Level;
 
 import java.io.File;
@@ -59,32 +57,29 @@ public class CommonProxy
         GameRules gRules = world.getGameRules();
 
         for (String rule: gRules.getRules()) {
-            if (rule.equals("doLimitedCrafting")) {
-                if (!gRules.getBoolean(rule)) {
-                    gRules.addGameRule("doLimitedCrafting", "true", GameRules.ValueType.BOOLEAN_VALUE);
-                    FMLLog.log.log(Level.INFO, "change GameRule {} to {}", rule, gRules.getBoolean(rule));
-                }
-                break;
+            if (rule.equals("doLimitedCrafting") && !gRules.getBoolean(rule)) {
+                gRules.addGameRule("doLimitedCrafting", "true", GameRules.ValueType.BOOLEAN_VALUE);
+                FMLLog.log.log(Level.INFO, "change GameRule {} to {}", rule, gRules.getBoolean(rule));
+            } else if (rule.equals("announceAdvancements") && gRules.getBoolean(rule)) {
+                gRules.addGameRule("announceAdvancements", "false", GameRules.ValueType.BOOLEAN_VALUE);
+                FMLLog.log.log(Level.INFO, "change GameRule {} to {}", rule, gRules.getBoolean(rule));
             }
         }
 
-        RecipeBookRemover.getInstance().removeSmeltingRecipes();
+        // TODO activate with special recipes
+        //RecipeBookRemover.getInstance().removeSmeltingRecipes();
     }
     
     @SubscribeEvent
-    public void onPlayerLoggedInEvent(PlayerEvent.PlayerLoggedInEvent event)
+    public void onPlayerConnectedToServer(FMLNetworkEvent.ServerConnectionFromClientEvent event)
     {
-        RecipeBookRemover recipeBookRemover = RecipeBookRemover.getInstance();
-        recipeBookRemover.forPlayer((EntityPlayerMP)event.player);
+        //this.removeRecipes(((NetHandlerPlayServer)event.getHandler()).player);
     }
 
-    @SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
-    public void itemSmelted(PlayerEvent.ItemSmeltedEvent event)
+    @SubscribeEvent
+    public void onPlayerLogin(PlayerEvent.PlayerLoggedInEvent event)
     {
-        // TODO
-        FMLLog.log.log(Level.INFO, "itemSmelted: " + event.smelting.getUnlocalizedName());
-        //event.setCanceled(true);
-        //event.player.addStat(new StatBase(), 1);
+        this.removeRecipes((EntityPlayerMP)event.player);
     }
     
     @SubscribeEvent
@@ -96,9 +91,16 @@ public class CommonProxy
         {
             //event.setCanceled(true);
 
+            // TODO add a advancement system for skills
             // send message to player
-            EntityPlayer p = event.getPlayer();
-            p.sendMessage(new TextComponentString("That is not allowed"));
+            // EntityPlayer p = event.getPlayer();
+            // p.sendMessage(new TextComponentString("That is not allowed"));
         }
+    }
+
+    private void removeRecipes(EntityPlayerMP playerMP)
+    {
+        RecipeBookRemover recipeBookRemover = RecipeBookRemover.getInstance();
+        recipeBookRemover.forPlayer(playerMP);
     }
 }

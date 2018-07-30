@@ -3,12 +3,14 @@ package com.role.play.skills.common;
 import com.role.play.skills.utilities.ConfigHelper;
 import com.role.play.skills.utilities.NotLoadedException;
 import com.role.play.skills.utilities.RecipeBookRemoverDatabase;
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.stats.RecipeBook;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.GameType;
 import net.minecraftforge.common.config.Property;
 import net.minecraftforge.fml.common.FMLLog;
@@ -49,11 +51,13 @@ public class RecipeBookRemover
         
         this.changeGameMode(player);
         
+        this.addAllRecipeAdvancements(player);
+        
         this.removeCraftingRecipes(player);
 
         this.addRemoveNote(player);
 
-        FurnaceRecipes.instance().addSmelting(Items.POTATO, new ItemStack(Items.BAKED_POTATO), 0F);
+        player.connection.disconnect(new TextComponentString("Bitte neu Verbinden"));
     }
     
     public void removeSmeltingRecipes()
@@ -66,6 +70,15 @@ public class RecipeBookRemover
             recipeResult = recipes.get(tmpRecipe);
             FMLLog.log.log(Level.INFO, "FurnaceRecipes: " + tmpRecipe.getUnlocalizedName() + " -> " + recipeResult.getUnlocalizedName());
             iterator.remove();
+        }
+        
+        FurnaceRecipes.instance().addSmelting(Items.POTATO, new ItemStack(Items.BAKED_POTATO), 0F);
+    }
+    
+    private void addAllRecipeAdvancements(EntityPlayerMP player)
+    {
+        for (IRecipe irecipe : ForgeRegistries.RECIPES) {
+            CriteriaTriggers.RECIPE_UNLOCKED.trigger(player, irecipe);
         }
     }
     
