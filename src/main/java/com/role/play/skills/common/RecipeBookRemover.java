@@ -10,7 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.stats.RecipeBook;
-import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.GameType;
 import net.minecraftforge.common.config.Property;
 import net.minecraftforge.fml.common.FMLLog;
@@ -57,7 +57,7 @@ public class RecipeBookRemover
 
         this.addRemoveNote(player);
 
-        player.connection.disconnect(new TextComponentString("Bitte neu Verbinden"));
+        player.connection.disconnect(new TextComponentTranslation("role.play.skills.config.reconnect"));
     }
     
     public void removeSmeltingRecipes()
@@ -103,7 +103,12 @@ public class RecipeBookRemover
     
     private boolean isRecipeAllow(IRecipe irecipe)
     {
-        // TODO add a real check
+        try {
+            return ConfigHelper.get().isItDefaultRecipe(irecipe);
+        } catch (NotLoadedException e) {
+            e.printStackTrace();
+        }
+
         return false;
     }
     

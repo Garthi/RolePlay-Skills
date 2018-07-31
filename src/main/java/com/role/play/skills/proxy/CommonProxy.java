@@ -37,9 +37,7 @@ public class CommonProxy
     }
     
     public void init(FMLInitializationEvent event)
-    {
-        FMLLog.log.log(Level.INFO, "init:" + event.toString());
-    }
+    {}
 
     @SubscribeEvent
     public static void onWorldLoad(WorldEvent.Load event)
