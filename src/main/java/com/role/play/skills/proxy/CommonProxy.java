@@ -16,7 +16,6 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
-import net.minecraftforge.fml.common.network.FMLNetworkEvent;
 import org.apache.logging.log4j.Level;
 
 import java.io.File;
@@ -69,12 +68,6 @@ public class CommonProxy
     }
     
     @SubscribeEvent
-    public void onPlayerConnectedToServer(FMLNetworkEvent.ServerConnectionFromClientEvent event)
-    {
-        //this.removeRecipes(((NetHandlerPlayServer)event.getHandler()).player);
-    }
-
-    @SubscribeEvent
     public void onPlayerLogin(PlayerEvent.PlayerLoggedInEvent event)
     {
         this.removeRecipes((EntityPlayerMP)event.player);
@@ -87,7 +80,7 @@ public class CommonProxy
         if (event.getPlayer() != null && !event.getPlayer().isCreative()
                 && event.getState().getBlock() == Blocks.WEB)
         {
-            //event.setCanceled(true);
+            // event.setCanceled(true);
 
             // TODO add a advancement system for skills
             // send message to player

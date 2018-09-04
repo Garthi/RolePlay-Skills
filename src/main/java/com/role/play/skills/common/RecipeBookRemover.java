@@ -82,8 +82,12 @@ public class RecipeBookRemover
         }
     }
     
-    private void removeCraftingRecipes(EntityPlayerMP player)
+    public void removeCraftingRecipes(EntityPlayerMP player)
     {
+        if (!this.isActive()) {
+            return;
+        }
+        
         RecipeBook book = new RecipeBook();
         for (IRecipe irecipe : ForgeRegistries.RECIPES) {
 

@@ -1,10 +1,13 @@
 package com.role.play.skills;
 
+import com.role.play.skills.commands.RecipesResetCommand;
 import com.role.play.skills.proxy.CommonProxy;
+import net.minecraft.command.CommandBase;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 
 @Mod(
         modid = RolePlaySkills.ID,
@@ -16,6 +19,9 @@ public class RolePlaySkills
     public static final String ID = "roleplayskills";
     public static final String NAME = "RolePlay-Skills";
     public static final String VERSION = "0.1";
+
+    /** Commands **/
+    private static CommandBase RECIPES_RESET_COMMAND = new RecipesResetCommand();
 
     @SidedProxy(
             clientSide = "com.role.play.skills.proxy.ClientProxy",
@@ -36,5 +42,11 @@ public class RolePlaySkills
     public void init(FMLInitializationEvent event)
     {
         proxy.init(event);
+    }
+    
+    @Mod.EventHandler
+    public void registerCommands(FMLServerStartingEvent event)
+    {
+        event.registerServerCommand(RECIPES_RESET_COMMAND);
     }
 }
