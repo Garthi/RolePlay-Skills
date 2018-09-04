@@ -1,0 +1,12 @@
+{
+  "type": "forge:ore_shapeless",
+  "group": "minecraft:stone",
+  "ingredients": [
+    {
+      "item": "roleplayskills:burned_stone"
+    }
+  ],
+  "result": {
+    "item": "minecraft:stone"
+  }
+}

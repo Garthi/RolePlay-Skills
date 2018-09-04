@@ -1,10 +1,13 @@
 package com.role.play.skills.common;
 
+import com.role.play.skills.common.modules.ModItems;
 import com.role.play.skills.utilities.ConfigHelper;
 import com.role.play.skills.utilities.NotLoadedException;
 import com.role.play.skills.utilities.RecipeBookRemoverDatabase;
 import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
@@ -72,7 +75,13 @@ public class RecipeBookRemover
             iterator.remove();
         }
         
-        FurnaceRecipes.instance().addSmelting(Items.POTATO, new ItemStack(Items.BAKED_POTATO), 0F);
+        // FurnaceRecipes.instance().addSmelting(Items.POTATO, new ItemStack(Items.BAKED_POTATO), 0F);
+
+        FurnaceRecipes.instance().addSmeltingRecipeForBlock(
+                Blocks.COBBLESTONE,
+                new ItemStack(ModItems.BURNED_STONE),
+                0.1F
+        );
     }
     
     private void addAllRecipeAdvancements(EntityPlayerMP player)

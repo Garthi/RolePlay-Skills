@@ -1,13 +1,21 @@
 package com.role.play.skills.proxy;
 
+import com.role.play.skills.RolePlaySkills;
 import com.role.play.skills.common.RecipeBookRemover;
+import com.role.play.skills.common.modules.ModItems;
 import com.role.play.skills.utilities.ConfigHelper;
 import com.role.play.skills.utilities.RecipeBookRemoverDatabase;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fml.common.FMLLog;
@@ -16,6 +24,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import org.apache.logging.log4j.Level;
 
 import java.io.File;
@@ -30,6 +39,9 @@ public class CommonProxy
     public void preInit(FMLPreInitializationEvent event)
     {
         ConfigHelper.init(event.getSuggestedConfigurationFile());
+
+        ModItems.init();
+        
         RecipeBookRemoverDatabase.init(new File(event.getModConfigurationDirectory(), "recipeBookRemoverDatabase.cfg"));
         
         MinecraftForge.EVENT_BUS.register(this);
@@ -63,8 +75,8 @@ public class CommonProxy
             }
         }
 
-        // TODO activate with special recipes
-        //RecipeBookRemover.getInstance().removeSmeltingRecipes();
+        // remove and replace smelting recipes
+        RecipeBookRemover.getInstance().removeSmeltingRecipes();
     }
     
     @SubscribeEvent
@@ -89,6 +101,17 @@ public class CommonProxy
         }
     }
 
+    @SubscribeEvent
+    public void initRecipes(RegistryEvent.Register<IRecipe> event)
+    {
+        GameRegistry.addShapelessRecipe(
+                new ResourceLocation(RolePlaySkills.ID, "clean_stone"),
+                null,
+                new ItemStack(Blocks.STONE),
+                Ingredient.fromItem(ModItems.BURNED_STONE)
+        );
+    }
+    
     private void removeRecipes(EntityPlayerMP playerMP)
     {
         RecipeBookRemover recipeBookRemover = RecipeBookRemover.getInstance();
