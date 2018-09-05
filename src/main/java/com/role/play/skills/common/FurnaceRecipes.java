@@ -1,9 +1,11 @@
 package com.role.play.skills.common;
 
 import com.role.play.skills.common.modules.ModItems;
+import com.role.play.skills.common.modules.RusticLogItem;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.FMLLog;
+import net.minecraftforge.fml.common.Loader;
 import org.apache.logging.log4j.Level;
 
 import java.util.Iterator;
@@ -68,5 +70,13 @@ public class FurnaceRecipes
                 new ItemStack(ModItems.RAW_CHARCOAL),
                 0.1F
         );
+
+        if (Loader.isModLoaded("rustic")) {
+            furnaceRecipes.addSmeltingRecipeForBlock(
+                    RusticLogItem.rusticOliveLog(),
+                    new ItemStack(ModItems.RAW_CHARCOAL),
+                    0.1F
+            );
+        }
     }
 }
