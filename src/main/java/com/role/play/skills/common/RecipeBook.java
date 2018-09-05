@@ -8,6 +8,7 @@ import com.role.play.skills.utilities.RecipeBookRemoverDatabase;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.Ingredient;
@@ -16,6 +17,7 @@ import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.GameType;
 import net.minecraftforge.common.config.Property;
 import net.minecraftforge.fml.common.FMLLog;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import org.apache.logging.log4j.Level;
@@ -83,6 +85,13 @@ public class RecipeBook
                 new ItemStack(Blocks.STONE),
                 Ingredient.fromItem(ModItems.BURNED_STONE)
         );
+        GameRegistry.addShapelessRecipe(
+                new ResourceLocation(RolePlaySkills.ID, "charcoal"),
+                null,
+                new ItemStack(Items.COAL, 1, 1),
+                Ingredient.fromItem(ModItems.RAW_CHARCOAL)
+        );
+
     }
     
     private void addAllRecipeAdvancements(EntityPlayerMP player)

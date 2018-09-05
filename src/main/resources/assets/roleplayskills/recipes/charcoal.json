@@ -1,0 +1,12 @@
+{
+  "type": "forge:ore_shapeless",
+  "group": "minecraft:charcoal",
+  "ingredients": [
+    {
+      "item": "roleplayskills:raw_charcoal"
+    }
+  ],
+  "result": {
+    "item": "minecraft:charcoal"
+  }
+}

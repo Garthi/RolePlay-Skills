@@ -58,5 +58,15 @@ public class FurnaceRecipes
                 new ItemStack(ModItems.BURNED_STONE),
                 0.1F
         );
+        furnaceRecipes.addSmeltingRecipeForBlock(
+                Blocks.LOG,
+                new ItemStack(ModItems.RAW_CHARCOAL),
+                0.1F
+        );
+        furnaceRecipes.addSmeltingRecipeForBlock(
+                Blocks.LOG2,
+                new ItemStack(ModItems.RAW_CHARCOAL),
+                0.1F
+        );
     }
 }
