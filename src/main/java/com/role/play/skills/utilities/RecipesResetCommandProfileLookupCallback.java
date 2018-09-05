@@ -2,7 +2,7 @@ package com.role.play.skills.utilities;
 
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.ProfileLookupCallback;
-import com.role.play.skills.common.RecipeBookRemover;
+import com.role.play.skills.common.RecipeBook;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.text.TextComponentTranslation;
@@ -28,8 +28,8 @@ public class RecipesResetCommandProfileLookupCallback implements ProfileLookupCa
             entityPlayerMP = (EntityPlayerMP)sender.getEntityWorld().getPlayerEntityByName(gameProfile.getName());
             
             if (entityPlayerMP != null) {
-                RecipeBookRemover recipeBookRemover = RecipeBookRemover.getInstance();
-                recipeBookRemover.removeCraftingRecipes(entityPlayerMP);
+                RecipeBook recipeBook = RecipeBook.getInstance();
+                recipeBook.removeCraftingRecipes(entityPlayerMP);
             }
 
             // feedback

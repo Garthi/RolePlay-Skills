@@ -1,17 +1,13 @@
 package com.role.play.skills.proxy;
 
-import com.role.play.skills.RolePlaySkills;
-import com.role.play.skills.common.RecipeBookRemover;
+import com.role.play.skills.common.FurnaceRecipes;
+import com.role.play.skills.common.RecipeBook;
 import com.role.play.skills.common.modules.ModItems;
 import com.role.play.skills.utilities.ConfigHelper;
 import com.role.play.skills.utilities.RecipeBookRemoverDatabase;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
@@ -24,7 +20,6 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import org.apache.logging.log4j.Level;
 
 import java.io.File;
@@ -75,8 +70,12 @@ public class CommonProxy
             }
         }
 
-        // remove and replace smelting recipes
-        RecipeBookRemover.getInstance().removeSmeltingRecipes();
+        // remove all furnace recipes
+        FurnaceRecipes furnaceRecipes = FurnaceRecipes.getInstance();
+        furnaceRecipes.removeAllRecipes();
+        
+        // add the new furnace recipes
+        furnaceRecipes.addCustomRecipes();
     }
     
     @SubscribeEvent
@@ -104,17 +103,13 @@ public class CommonProxy
     @SubscribeEvent
     public void initRecipes(RegistryEvent.Register<IRecipe> event)
     {
-        GameRegistry.addShapelessRecipe(
-                new ResourceLocation(RolePlaySkills.ID, "clean_stone"),
-                null,
-                new ItemStack(Blocks.STONE),
-                Ingredient.fromItem(ModItems.BURNED_STONE)
-        );
+        RecipeBook recipeBook = RecipeBook.getInstance();
+        recipeBook.addAllCustomRecipes();
     }
     
     private void removeRecipes(EntityPlayerMP playerMP)
     {
-        RecipeBookRemover recipeBookRemover = RecipeBookRemover.getInstance();
-        recipeBookRemover.forPlayer(playerMP);
+        RecipeBook recipeBook = RecipeBook.getInstance();
+        recipeBook.forPlayer(playerMP);
     }
 }

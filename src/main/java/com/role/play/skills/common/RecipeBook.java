@@ -1,54 +1,43 @@
 package com.role.play.skills.common;
 
+import com.role.play.skills.RolePlaySkills;
 import com.role.play.skills.common.modules.ModItems;
 import com.role.play.skills.utilities.ConfigHelper;
 import com.role.play.skills.utilities.NotLoadedException;
 import com.role.play.skills.utilities.RecipeBookRemoverDatabase;
 import net.minecraft.advancements.CriteriaTriggers;
-import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.item.crafting.IRecipe;
-import net.minecraft.stats.RecipeBook;
+import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.GameType;
 import net.minecraftforge.common.config.Property;
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import org.apache.logging.log4j.Level;
-
-import java.util.Iterator;
-import java.util.Map;
 
 /**
  * @author Martin "Garth" Zander <garth@new-crusader.de>
  */
-public class RecipeBookRemover
+public class RecipeBook
 {
-    private static RecipeBookRemover instance;
+    private static final RecipeBook instance = new RecipeBook();
     
-    public static RecipeBookRemover getInstance()
+    public static RecipeBook getInstance()
     {
-        if (instance == null) {
-            instance = new RecipeBookRemover();
-        }
-        
         return instance;
     }
     
-    private RecipeBookRemover()
+    private RecipeBook()
     {}
     
     public void forPlayer(EntityPlayerMP player)
     {
-        if (!this.isActive()) {
-            return;
-        }
-        
-        if (this.hasRemoveFrom(player)) {
+        if (!this.isActive() || this.hasRemoveFrom(player)) {
             return;
         }
         
@@ -63,41 +52,13 @@ public class RecipeBookRemover
         player.connection.disconnect(new TextComponentTranslation("role.play.skills.config.reconnect"));
     }
     
-    public void removeSmeltingRecipes()
-    {
-        ItemStack recipeResult;
-        Map<ItemStack,ItemStack> recipes = FurnaceRecipes.instance().getSmeltingList();
-        Iterator<ItemStack> iterator = recipes.keySet().iterator();
-        while(iterator.hasNext()) {
-            ItemStack tmpRecipe = iterator.next();
-            recipeResult = recipes.get(tmpRecipe);
-            FMLLog.log.log(Level.INFO, "FurnaceRecipes: " + tmpRecipe.getUnlocalizedName() + " -> " + recipeResult.getUnlocalizedName());
-            iterator.remove();
-        }
-        
-        // FurnaceRecipes.instance().addSmelting(Items.POTATO, new ItemStack(Items.BAKED_POTATO), 0F);
-
-        FurnaceRecipes.instance().addSmeltingRecipeForBlock(
-                Blocks.COBBLESTONE,
-                new ItemStack(ModItems.BURNED_STONE),
-                0.1F
-        );
-    }
-    
-    private void addAllRecipeAdvancements(EntityPlayerMP player)
-    {
-        for (IRecipe irecipe : ForgeRegistries.RECIPES) {
-            CriteriaTriggers.RECIPE_UNLOCKED.trigger(player, irecipe);
-        }
-    }
-    
     public void removeCraftingRecipes(EntityPlayerMP player)
     {
         if (!this.isActive()) {
             return;
         }
         
-        RecipeBook book = new RecipeBook();
+        net.minecraft.stats.RecipeBook book = new net.minecraft.stats.RecipeBook();
         for (IRecipe irecipe : ForgeRegistries.RECIPES) {
 
             book.unlock(irecipe);
@@ -112,6 +73,23 @@ public class RecipeBookRemover
 
         // set the new recipe book to player
         player.getRecipeBook().copyFrom(book);
+    }
+    
+    public void addAllCustomRecipes()
+    {
+        GameRegistry.addShapelessRecipe(
+                new ResourceLocation(RolePlaySkills.ID, "clean_stone"),
+                null,
+                new ItemStack(Blocks.STONE),
+                Ingredient.fromItem(ModItems.BURNED_STONE)
+        );
+    }
+    
+    private void addAllRecipeAdvancements(EntityPlayerMP player)
+    {
+        for (IRecipe irecipe : ForgeRegistries.RECIPES) {
+            CriteriaTriggers.RECIPE_UNLOCKED.trigger(player, irecipe);
+        }
     }
     
     private boolean isRecipeAllow(IRecipe irecipe)

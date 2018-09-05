@@ -1,6 +1,7 @@
 package com.role.play.skills.proxy;
 
 import com.role.play.skills.RolePlaySkills;
+import com.role.play.skills.common.RecipeBook;
 import com.role.play.skills.common.modules.ModItems;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -49,11 +50,7 @@ public class ClientProxy extends CommonProxy
     @SubscribeEvent
     public void initRecipes(RegistryEvent.Register<IRecipe> event)
     {
-        GameRegistry.addShapelessRecipe(
-                new ResourceLocation(RolePlaySkills.ID, "clean_stone"),
-                null,
-                new ItemStack(Blocks.STONE),
-                Ingredient.fromItem(ModItems.BURNED_STONE)
-        );
+        RecipeBook recipeBook = RecipeBook.getInstance();
+        recipeBook.addAllCustomRecipes();
     }
 }
