@@ -5,17 +5,18 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
  * @author Martin "Garth" Zander <garth@new-crusader.de>
- * @package RolePlay-Skills
  */
 public class ModItems
 {
     public static SmeltingItem BURNED_STONE;
     public static SmeltingItem RAW_CHARCOAL;
+    public static ItemBookForgetting BOOK;
     
     public static void init()
     {
         BURNED_STONE = new SmeltingItem("burned_stone");
         RAW_CHARCOAL = new SmeltingItem("raw_charcoal");
+        BOOK = new ItemBookForgetting();
     }
     
     @SideOnly(Side.CLIENT)
@@ -23,5 +24,6 @@ public class ModItems
     {
         BURNED_STONE.initModel();
         RAW_CHARCOAL.initModel();
+        BOOK.initModel();
     }
 }
