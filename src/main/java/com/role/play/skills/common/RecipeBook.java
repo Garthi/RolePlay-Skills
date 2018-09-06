@@ -90,7 +90,30 @@ public class RecipeBook
                 new ItemStack(Items.COAL, 1, 1),
                 Ingredient.fromItem(ModItems.RAW_CHARCOAL)
         );
-
+        GameRegistry.addShapelessRecipe(
+                new ResourceLocation(RolePlaySkills.ID, "gold_ingot"),
+                null,
+                new ItemStack(Items.GOLD_INGOT),
+                Ingredient.fromItem(ModItems.SLAG_GOLD_INGOT)
+        );
+        GameRegistry.addShapelessRecipe(
+                new ResourceLocation(RolePlaySkills.ID, "iron_ingot"),
+                null,
+                new ItemStack(Items.IRON_INGOT),
+                Ingredient.fromItem(ModItems.SLAG_IRON_INGOT)
+        );
+        GameRegistry.addShapelessRecipe(
+                new ResourceLocation(RolePlaySkills.ID, "netherbrick"),
+                null,
+                new ItemStack(Items.NETHERBRICK),
+                Ingredient.fromItem(ModItems.SLAG_NETHERBRICK)
+        );
+        GameRegistry.addShapelessRecipe(
+                new ResourceLocation(RolePlaySkills.ID, "stonebrick_cracked"),
+                null,
+                new ItemStack(Blocks.STONEBRICK, 1, 2),
+                Ingredient.fromItem(ModItems.SLAG_STONEBRICK_CRACKED)
+        );
     }
     
     private void addAllRecipeAdvancements(EntityPlayerMP player)

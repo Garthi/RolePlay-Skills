@@ -67,6 +67,26 @@ public class FurnaceRecipes
                 0.1F
         );
         furnaceRecipes.addSmeltingRecipeForBlock(
+                Blocks.STONEBRICK,
+                new ItemStack(ModItems.SLAG_STONEBRICK_CRACKED),
+                0.1F
+        );
+        furnaceRecipes.addSmeltingRecipeForBlock(
+                Blocks.NETHERRACK,
+                new ItemStack(ModItems.SLAG_NETHERBRICK),
+                0.1F
+        );
+        furnaceRecipes.addSmeltingRecipeForBlock(
+                Blocks.IRON_ORE,
+                new ItemStack(ModItems.SLAG_IRON_INGOT),
+                0.7F
+        );
+        furnaceRecipes.addSmeltingRecipeForBlock(
+                Blocks.GOLD_ORE,
+                new ItemStack(ModItems.SLAG_GOLD_INGOT),
+                1.0F
+        );
+        furnaceRecipes.addSmeltingRecipeForBlock(
                 Blocks.LOG,
                 new ItemStack(ModItems.RAW_CHARCOAL),
                 0.1F
