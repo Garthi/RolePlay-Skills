@@ -13,6 +13,8 @@ public class ModItems
     public static SmeltingItem SLAG_NETHERBRICK;
     public static SmeltingItem SLAG_IRON_INGOT;
     public static SmeltingItem SLAG_GOLD_INGOT;
+    public static SmeltingItem SLAG_TIN_INGOT;
+    public static SmeltingItem SLAG_COPPER_INGOT;
     public static SmeltingItem RAW_CHARCOAL;
     public static ItemBookForgetting BOOK;
     
@@ -23,6 +25,8 @@ public class ModItems
         SLAG_NETHERBRICK = new SmeltingItem("slag_netherbrick");
         SLAG_IRON_INGOT = new SmeltingItem("slag_iron_ingot");
         SLAG_GOLD_INGOT = new SmeltingItem("slag_gold_ingot");
+        SLAG_TIN_INGOT = new SmeltingItem("slag_tin_ingot");
+        SLAG_COPPER_INGOT = new SmeltingItem("slag_copper_ingot");
         RAW_CHARCOAL = new SmeltingItem("raw_charcoal");
         BOOK = new ItemBookForgetting();
     }
@@ -35,6 +39,8 @@ public class ModItems
         SLAG_NETHERBRICK.initModel();
         SLAG_IRON_INGOT.initModel();
         SLAG_GOLD_INGOT.initModel();
+        SLAG_TIN_INGOT.initModel();
+        SLAG_COPPER_INGOT.initModel();
         RAW_CHARCOAL.initModel();
         BOOK.initModel();
     }

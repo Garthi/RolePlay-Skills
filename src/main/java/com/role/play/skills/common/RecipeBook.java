@@ -1,6 +1,7 @@
 package com.role.play.skills.common;
 
 import com.role.play.skills.RolePlaySkills;
+import com.role.play.skills.common.modules.ForestryItems;
 import com.role.play.skills.common.modules.ModItems;
 import com.role.play.skills.utilities.ConfigHelper;
 import com.role.play.skills.utilities.NotLoadedException;
@@ -17,6 +18,7 @@ import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.GameType;
 import net.minecraftforge.common.config.Property;
 import net.minecraftforge.fml.common.FMLLog;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import org.apache.logging.log4j.Level;
@@ -114,6 +116,22 @@ public class RecipeBook
                 new ItemStack(Blocks.STONEBRICK, 1, 2),
                 Ingredient.fromItem(ModItems.SLAG_STONEBRICK_CRACKED)
         );
+
+
+        if (Loader.isModLoaded("forestry")) {
+            GameRegistry.addShapelessRecipe(
+                    new ResourceLocation(RolePlaySkills.ID, "tin_ingot"),
+                    null,
+                    new ItemStack(ForestryItems.forestryTinIngot()),
+                    Ingredient.fromItem(ModItems.SLAG_TIN_INGOT)
+            );
+            GameRegistry.addShapelessRecipe(
+                    new ResourceLocation(RolePlaySkills.ID, "copper_ingot"),
+                    null,
+                    new ItemStack(ForestryItems.forestryCopperIngot()),
+                    Ingredient.fromItem(ModItems.SLAG_COPPER_INGOT)
+            );
+        }
     }
     
     private void addAllRecipeAdvancements(EntityPlayerMP player)

@@ -40,4 +40,16 @@ public class ForestryItems
     {
         return Block.REGISTRY.getObject(new ResourceLocation("forestry:logs.7"));
     }
+    public static Block forestryOre()
+    {
+        return Block.REGISTRY.getObject(new ResourceLocation("forestry:resources"));
+    }
+    public static Block forestryTinIngot()
+    {
+        return Block.REGISTRY.getObject(new ResourceLocation("forestry:ingot_tin"));
+    }
+    public static Block forestryCopperIngot()
+    {
+        return Block.REGISTRY.getObject(new ResourceLocation("forestry:ingot_copper"));
+    }
 }

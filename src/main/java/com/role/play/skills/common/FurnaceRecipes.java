@@ -146,6 +146,16 @@ public class FurnaceRecipes
                     new ItemStack(ModItems.RAW_CHARCOAL),
                     0.1F
             );
+            furnaceRecipes.addSmeltingRecipe(
+                    new ItemStack(ForestryItems.forestryOre(), 1, 2),
+                    new ItemStack(ModItems.SLAG_TIN_INGOT),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipe(
+                    new ItemStack(ForestryItems.forestryOre(), 1, 1),
+                    new ItemStack(ModItems.SLAG_COPPER_INGOT),
+                    0.1F
+            );
         }
         
         if (Loader.isModLoaded("biomesoplenty")) {
