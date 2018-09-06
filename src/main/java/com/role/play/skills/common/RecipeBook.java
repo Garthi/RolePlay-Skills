@@ -87,7 +87,7 @@ public class RecipeBook
         GameRegistry.addShapelessRecipe(
                 new ResourceLocation(RolePlaySkills.ID, "charcoal"),
                 null,
-                new ItemStack(Items.COAL, 1, 1),
+                new ItemStack(Items.COAL, 4, 1),
                 Ingredient.fromItem(ModItems.RAW_CHARCOAL)
         );
         GameRegistry.addShapelessRecipe(
