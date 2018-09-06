@@ -17,7 +17,6 @@ import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.GameType;
 import net.minecraftforge.common.config.Property;
 import net.minecraftforge.fml.common.FMLLog;
-import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import org.apache.logging.log4j.Level;
@@ -83,7 +82,7 @@ public class RecipeBook
                 new ResourceLocation(RolePlaySkills.ID, "clean_stone"),
                 null,
                 new ItemStack(Blocks.STONE),
-                Ingredient.fromItem(ModItems.BURNED_STONE)
+                Ingredient.fromItem(ModItems.SLAG_STONE)
         );
         GameRegistry.addShapelessRecipe(
                 new ResourceLocation(RolePlaySkills.ID, "charcoal"),

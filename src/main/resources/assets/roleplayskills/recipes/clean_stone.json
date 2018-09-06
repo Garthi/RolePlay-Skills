@@ -3,7 +3,7 @@
   "group": "minecraft:stone",
   "ingredients": [
     {
-      "item": "roleplayskills:burned_stone"
+      "item": "roleplayskills:slag_stone"
     }
   ],
   "result": {

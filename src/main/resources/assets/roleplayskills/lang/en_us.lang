@@ -4,7 +4,7 @@ role.play.skills.command.reset.help=/%s <player>
 role.play.skills.command.player.not.found=Player not found
 role.play.skills.command.reset.success.message=Recipes reseted for player %s
 
-item.roleplayskills.burned_stone.name=Slag stone
+item.roleplayskills.slag_stone.name=Slag stone
 item.roleplayskills.raw_charcoal.name=Raw charcoal
 
 item.roleplayskills.book_forgetting.name=Book of forgetting

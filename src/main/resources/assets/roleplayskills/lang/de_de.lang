@@ -4,7 +4,7 @@ role.play.skills.command.reset.help=/%s <player>
 role.play.skills.command.player.not.found=Spieler %s konnte nicht gefunden werden
 role.play.skills.command.reset.success.message=Resepte wurden zurück gesetzt für Spieler %s
 
-item.roleplayskills.burned_stone.name=Schlacke Stein
+item.roleplayskills.slag_stone.name=Schlacke Stein
 item.roleplayskills.raw_charcoal.name=Unverarbeitete Holzkohle
 
 item.roleplayskills.book_forgetting.name=Buch des Vergessens

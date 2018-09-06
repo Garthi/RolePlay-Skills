@@ -57,7 +57,7 @@ public class FurnaceRecipes
         // custom recipes
         furnaceRecipes.addSmeltingRecipeForBlock(
                 Blocks.COBBLESTONE,
-                new ItemStack(ModItems.BURNED_STONE),
+                new ItemStack(ModItems.SLAG_STONE),
                 0.1F
         );
         furnaceRecipes.addSmeltingRecipeForBlock(

@@ -8,13 +8,13 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  */
 public class ModItems
 {
-    public static SmeltingItem BURNED_STONE;
+    public static SmeltingItem SLAG_STONE;
     public static SmeltingItem RAW_CHARCOAL;
     public static ItemBookForgetting BOOK;
     
     public static void init()
     {
-        BURNED_STONE = new SmeltingItem("burned_stone");
+        SLAG_STONE = new SmeltingItem("slag_stone");
         RAW_CHARCOAL = new SmeltingItem("raw_charcoal");
         BOOK = new ItemBookForgetting();
     }
@@ -22,7 +22,7 @@ public class ModItems
     @SideOnly(Side.CLIENT)
     public static void initModels()
     {
-        BURNED_STONE.initModel();
+        SLAG_STONE.initModel();
         RAW_CHARCOAL.initModel();
         BOOK.initModel();
     }
