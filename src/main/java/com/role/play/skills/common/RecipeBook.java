@@ -114,6 +114,30 @@ public class RecipeBook
                 new ItemStack(Blocks.STONEBRICK, 1, 2),
                 Ingredient.fromItem(ModItems.SLAG_STONEBRICK_CRACKED)
         );
+        GameRegistry.addShapelessRecipe(
+                new ResourceLocation(RolePlaySkills.ID, "glass_ball"),
+                null,
+                new ItemStack(Items.GLASS_BOTTLE),
+                Ingredient.fromItem(ModItems.GLASS_BALL)
+        );
+        GameRegistry.addShapedRecipe(
+                new ResourceLocation(RolePlaySkills.ID, "glass_pane"),
+                null,
+                new ItemStack(Blocks.GLASS_PANE),
+                "##",
+                "##",
+                '#',
+                new ItemStack(ModItems.GLASS_BALL)
+        );
+        GameRegistry.addShapedRecipe(
+                new ResourceLocation(RolePlaySkills.ID, "glass"),
+                null,
+                new ItemStack(Blocks.GLASS),
+                "##",
+                "##",
+                '#',
+                new ItemStack(Blocks.GLASS_PANE)
+        );
     }
     
     private void addAllRecipeAdvancements(EntityPlayerMP player)

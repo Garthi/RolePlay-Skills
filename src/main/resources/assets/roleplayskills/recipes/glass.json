@@ -1,0 +1,17 @@
+{
+  "type": "forge:ore_shapeless",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:glass_pane"
+    }
+  },
+  "result": {
+    "item": "minecraft:glass",
+    "data": 0,
+    "count": 1
+  }
+}

@@ -96,6 +96,11 @@ public class FurnaceRecipes
                 new ItemStack(ModItems.RAW_CHARCOAL),
                 0.1F
         );
+        furnaceRecipes.addSmeltingRecipeForBlock(
+                Blocks.SAND,
+                new ItemStack(ModItems.GLASS_BALL),
+                0.1F
+        );
 
         if (Loader.isModLoaded("rustic")) {
             furnaceRecipes.addSmeltingRecipeForBlock(
@@ -232,6 +237,11 @@ public class FurnaceRecipes
             furnaceRecipes.addSmeltingRecipe(
                     new ItemStack(BiomesoplentyItems.biomesoplentyLog4(), 1, 5),
                     new ItemStack(ModItems.RAW_CHARCOAL),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipe(
+                    new ItemStack(BiomesoplentyItems.biomesoplentyWhiteSand(), 1, 0),
+                    new ItemStack(ModItems.GLASS_BALL),
                     0.1F
             );
         }

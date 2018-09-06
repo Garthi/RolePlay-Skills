@@ -14,6 +14,7 @@ public class ModItems
     public static SmeltingItem SLAG_IRON_INGOT;
     public static SmeltingItem SLAG_GOLD_INGOT;
     public static SmeltingItem RAW_CHARCOAL;
+    public static SmeltingItem GLASS_BALL;
     public static ItemBookForgetting BOOK;
     
     public static void init()
@@ -24,6 +25,7 @@ public class ModItems
         SLAG_IRON_INGOT = new SmeltingItem("slag_iron_ingot");
         SLAG_GOLD_INGOT = new SmeltingItem("slag_gold_ingot");
         RAW_CHARCOAL = new SmeltingItem("raw_charcoal");
+        GLASS_BALL = new SmeltingItem("glass_ball");
         BOOK = new ItemBookForgetting();
     }
     
@@ -36,6 +38,7 @@ public class ModItems
         SLAG_IRON_INGOT.initModel();
         SLAG_GOLD_INGOT.initModel();
         RAW_CHARCOAL.initModel();
+        GLASS_BALL.initModel();
         BOOK.initModel();
     }
 }
