@@ -1,11 +1,16 @@
 package com.role.play.skills.common;
 
+import com.role.play.skills.common.modules.BiomesoplentyItems;
+import com.role.play.skills.common.modules.ForestryItems;
 import com.role.play.skills.common.modules.ModItems;
-import com.role.play.skills.common.modules.RusticLogItem;
+import com.role.play.skills.common.modules.RusticItems;
+import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import org.apache.logging.log4j.Level;
 
 import java.util.Iterator;
@@ -53,6 +58,7 @@ public class FurnaceRecipes
                 new ItemStack(Blocks.SPONGE, 1, 0),
                 0.15F
         );
+        furnaceRecipes.addSmelting(Items.CHORUS_FRUIT, new ItemStack(Items.CHORUS_FRUIT_POPPED), 0.1F);
 
         // custom recipes
         furnaceRecipes.addSmeltingRecipeForBlock(
@@ -73,7 +79,138 @@ public class FurnaceRecipes
 
         if (Loader.isModLoaded("rustic")) {
             furnaceRecipes.addSmeltingRecipeForBlock(
-                    RusticLogItem.rusticOliveLog(),
+                    RusticItems.rusticLogs(),
+                    new ItemStack(ModItems.RAW_CHARCOAL),
+                    0.1F
+            );
+        }
+
+        if (Loader.isModLoaded("forestry")) {
+            furnaceRecipes.addSmeltingRecipeForBlock(
+                    ForestryItems.forestryLog0(),
+                    new ItemStack(ModItems.RAW_CHARCOAL),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipeForBlock(
+                    ForestryItems.forestryLog1(),
+                    new ItemStack(ModItems.RAW_CHARCOAL),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipeForBlock(
+                    ForestryItems.forestryLog2(),
+                    new ItemStack(ModItems.RAW_CHARCOAL),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipeForBlock(
+                    ForestryItems.forestryLog3(),
+                    new ItemStack(ModItems.RAW_CHARCOAL),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipeForBlock(
+                    ForestryItems.forestryLog4(),
+                    new ItemStack(ModItems.RAW_CHARCOAL),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipeForBlock(
+                    ForestryItems.forestryLog5(),
+                    new ItemStack(ModItems.RAW_CHARCOAL),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipeForBlock(
+                    ForestryItems.forestryLog6(),
+                    new ItemStack(ModItems.RAW_CHARCOAL),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipeForBlock(
+                    ForestryItems.forestryLog7(),
+                    new ItemStack(ModItems.RAW_CHARCOAL),
+                    0.1F
+            );
+        }
+        
+        if (Loader.isModLoaded("biomesoplenty")) {
+            furnaceRecipes.addSmeltingRecipe(
+                    new ItemStack(BiomesoplentyItems.biomesoplentyLog0(), 1, 4),
+                    new ItemStack(ModItems.RAW_CHARCOAL),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipe(
+                    new ItemStack(BiomesoplentyItems.biomesoplentyLog0(), 1, 5),
+                    new ItemStack(ModItems.RAW_CHARCOAL),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipe(
+                    new ItemStack(BiomesoplentyItems.biomesoplentyLog0(), 1, 6),
+                    new ItemStack(ModItems.RAW_CHARCOAL),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipe(
+                    new ItemStack(BiomesoplentyItems.biomesoplentyLog0(), 1, 7),
+                    new ItemStack(ModItems.RAW_CHARCOAL),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipe(
+                    new ItemStack(BiomesoplentyItems.biomesoplentyLog1(), 1, 4),
+                    new ItemStack(ModItems.RAW_CHARCOAL),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipe(
+                    new ItemStack(BiomesoplentyItems.biomesoplentyLog1(), 1, 5),
+                    new ItemStack(ModItems.RAW_CHARCOAL),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipe(
+                    new ItemStack(BiomesoplentyItems.biomesoplentyLog1(), 1, 6),
+                    new ItemStack(ModItems.RAW_CHARCOAL),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipe(
+                    new ItemStack(BiomesoplentyItems.biomesoplentyLog1(), 1, 7),
+                    new ItemStack(ModItems.RAW_CHARCOAL),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipe(
+                    new ItemStack(BiomesoplentyItems.biomesoplentyLog2(), 1, 4),
+                    new ItemStack(ModItems.RAW_CHARCOAL),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipe(
+                    new ItemStack(BiomesoplentyItems.biomesoplentyLog2(), 1, 5),
+                    new ItemStack(ModItems.RAW_CHARCOAL),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipe(
+                    new ItemStack(BiomesoplentyItems.biomesoplentyLog2(), 1, 6),
+                    new ItemStack(ModItems.RAW_CHARCOAL),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipe(
+                    new ItemStack(BiomesoplentyItems.biomesoplentyLog2(), 1, 7),
+                    new ItemStack(ModItems.RAW_CHARCOAL),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipe(
+                    new ItemStack(BiomesoplentyItems.biomesoplentyLog3(), 1, 4),
+                    new ItemStack(ModItems.RAW_CHARCOAL),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipe(
+                    new ItemStack(BiomesoplentyItems.biomesoplentyLog3(), 1, 5),
+                    new ItemStack(ModItems.RAW_CHARCOAL),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipe(
+                    new ItemStack(BiomesoplentyItems.biomesoplentyLog3(), 1, 6),
+                    new ItemStack(ModItems.RAW_CHARCOAL),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipe(
+                    new ItemStack(BiomesoplentyItems.biomesoplentyLog3(), 1, 7),
+                    new ItemStack(ModItems.RAW_CHARCOAL),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipe(
+                    new ItemStack(BiomesoplentyItems.biomesoplentyLog4(), 1, 5),
                     new ItemStack(ModItems.RAW_CHARCOAL),
                     0.1F
             );

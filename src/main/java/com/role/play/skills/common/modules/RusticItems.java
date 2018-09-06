@@ -6,15 +6,10 @@ import net.minecraft.util.ResourceLocation;
 /**
  * @author Martin "Garth" Zander <garth@new-crusader.de>
  */
-public class RusticLogItem
+public class RusticItems
 {
-    public static Block rusticOliveLog()
+    public static Block rusticLogs()
     {
         return Block.REGISTRY.getObject(new ResourceLocation("rustic:log"));
-    }
-    
-    public static Block rusticIronWoodLog()
-    {
-        return Block.REGISTRY.getObject(new ResourceLocation(""));
     }
 }
