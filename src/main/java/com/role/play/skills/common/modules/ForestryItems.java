@@ -1,6 +1,7 @@
 package com.role.play.skills.common.modules;
 
 import net.minecraft.block.Block;
+import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 
 /**
@@ -44,12 +45,12 @@ public class ForestryItems
     {
         return Block.REGISTRY.getObject(new ResourceLocation("forestry:resources"));
     }
-    public static Block forestryTinIngot()
+    public static Item forestryTinIngot()
     {
-        return Block.REGISTRY.getObject(new ResourceLocation("forestry:ingot_tin"));
+        return Item.REGISTRY.getObject(new ResourceLocation("forestry:ingot_tin"));
     }
-    public static Block forestryCopperIngot()
+    public static Item forestryCopperIngot()
     {
-        return Block.REGISTRY.getObject(new ResourceLocation("forestry:ingot_copper"));
+        return Item.REGISTRY.getObject(new ResourceLocation("forestry:ingot_copper"));
     }
 }
