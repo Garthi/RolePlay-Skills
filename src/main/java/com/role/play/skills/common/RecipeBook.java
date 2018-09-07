@@ -116,7 +116,132 @@ public class RecipeBook
                 new ItemStack(Blocks.STONEBRICK, 1, 2),
                 Ingredient.fromItem(ModItems.SLAG_STONEBRICK_CRACKED)
         );
-
+        GameRegistry.addShapelessRecipe(
+                new ResourceLocation(RolePlaySkills.ID, "glass_ball"),
+                null,
+                new ItemStack(Items.GLASS_BOTTLE),
+                Ingredient.fromItem(ModItems.GLASS_BALL)
+        );
+        GameRegistry.addShapedRecipe(
+                new ResourceLocation(RolePlaySkills.ID, "glass_pane"),
+                null,
+                new ItemStack(Blocks.GLASS_PANE),
+                "##",
+                "##",
+                '#',
+                new ItemStack(ModItems.GLASS_BALL)
+        );
+        GameRegistry.addShapedRecipe(
+                new ResourceLocation(RolePlaySkills.ID, "glass"),
+                null,
+                new ItemStack(Blocks.GLASS),
+                "##",
+                "##",
+                '#',
+                new ItemStack(Blocks.GLASS_PANE)
+        );
+        GameRegistry.addShapelessRecipe(
+                new ResourceLocation(RolePlaySkills.ID, "hardened_clay"),
+                null,
+                new ItemStack(Blocks.HARDENED_CLAY),
+                Ingredient.fromItem(ModItems.SLAG_HARDENED_CLAY)
+        );
+        GameRegistry.addShapelessRecipe(
+                new ResourceLocation(RolePlaySkills.ID, "glazed_terracotta_black"),
+                null,
+                new ItemStack(Blocks.BLACK_GLAZED_TERRACOTTA),
+                Ingredient.fromItem(ModItems.SLAG_GLAZED_TERRACOTTA_BLACK)
+        );
+        GameRegistry.addShapelessRecipe(
+                new ResourceLocation(RolePlaySkills.ID, "glazed_terracotta_blue"),
+                null,
+                new ItemStack(Blocks.BLUE_GLAZED_TERRACOTTA),
+                Ingredient.fromItem(ModItems.SLAG_GLAZED_TERRACOTTA_BLUE)
+        );
+        GameRegistry.addShapelessRecipe(
+                new ResourceLocation(RolePlaySkills.ID, "glazed_terracotta_brown"),
+                null,
+                new ItemStack(Blocks.BROWN_GLAZED_TERRACOTTA),
+                Ingredient.fromItem(ModItems.SLAG_GLAZED_TERRACOTTA_BROWN)
+        );
+        GameRegistry.addShapelessRecipe(
+                new ResourceLocation(RolePlaySkills.ID, "glazed_terracotta_cyan"),
+                null,
+                new ItemStack(Blocks.CYAN_GLAZED_TERRACOTTA),
+                Ingredient.fromItem(ModItems.SLAG_GLAZED_TERRACOTTA_CYAN)
+        );
+        GameRegistry.addShapelessRecipe(
+                new ResourceLocation(RolePlaySkills.ID, "glazed_terracotta_gray"),
+                null,
+                new ItemStack(Blocks.GRAY_GLAZED_TERRACOTTA),
+                Ingredient.fromItem(ModItems.SLAG_GLAZED_TERRACOTTA_GRAY)
+        );
+        GameRegistry.addShapelessRecipe(
+                new ResourceLocation(RolePlaySkills.ID, "glazed_terracotta_green"),
+                null,
+                new ItemStack(Blocks.GREEN_GLAZED_TERRACOTTA),
+                Ingredient.fromItem(ModItems.SLAG_GLAZED_TERRACOTTA_GREEN)
+        );
+        GameRegistry.addShapelessRecipe(
+                new ResourceLocation(RolePlaySkills.ID, "glazed_terracotta_light_blue"),
+                null,
+                new ItemStack(Blocks.LIGHT_BLUE_GLAZED_TERRACOTTA),
+                Ingredient.fromItem(ModItems.SLAG_GLAZED_TERRACOTTA_LIGHT_BLUE)
+        );
+        GameRegistry.addShapelessRecipe(
+                new ResourceLocation(RolePlaySkills.ID, "glazed_terracotta_lime"),
+                null,
+                new ItemStack(Blocks.LIME_GLAZED_TERRACOTTA),
+                Ingredient.fromItem(ModItems.SLAG_GLAZED_TERRACOTTA_LIME)
+        );
+        GameRegistry.addShapelessRecipe(
+                new ResourceLocation(RolePlaySkills.ID, "glazed_terracotta_magenta"),
+                null,
+                new ItemStack(Blocks.MAGENTA_GLAZED_TERRACOTTA),
+                Ingredient.fromItem(ModItems.SLAG_GLAZED_TERRACOTTA_MAGENTA)
+        );
+        GameRegistry.addShapelessRecipe(
+                new ResourceLocation(RolePlaySkills.ID, "glazed_terracotta_orange"),
+                null,
+                new ItemStack(Blocks.ORANGE_GLAZED_TERRACOTTA),
+                Ingredient.fromItem(ModItems.SLAG_GLAZED_TERRACOTTA_ORANGE)
+        );
+        GameRegistry.addShapelessRecipe(
+                new ResourceLocation(RolePlaySkills.ID, "glazed_terracotta_pink"),
+                null,
+                new ItemStack(Blocks.PINK_GLAZED_TERRACOTTA),
+                Ingredient.fromItem(ModItems.SLAG_GLAZED_TERRACOTTA_PINK)
+        );
+        GameRegistry.addShapelessRecipe(
+                new ResourceLocation(RolePlaySkills.ID, "glazed_terracotta_purple"),
+                null,
+                new ItemStack(Blocks.PURPLE_GLAZED_TERRACOTTA),
+                Ingredient.fromItem(ModItems.SLAG_GLAZED_TERRACOTTA_PURPLE)
+        );
+        GameRegistry.addShapelessRecipe(
+                new ResourceLocation(RolePlaySkills.ID, "glazed_terracotta_red"),
+                null,
+                new ItemStack(Blocks.RED_GLAZED_TERRACOTTA),
+                Ingredient.fromItem(ModItems.SLAG_GLAZED_TERRACOTTA_RED)
+        );
+        GameRegistry.addShapelessRecipe(
+                new ResourceLocation(RolePlaySkills.ID, "glazed_terracotta_silver"),
+                null,
+                new ItemStack(Blocks.SILVER_GLAZED_TERRACOTTA),
+                Ingredient.fromItem(ModItems.SLAG_GLAZED_TERRACOTTA_SILVER)
+        );
+        GameRegistry.addShapelessRecipe(
+                new ResourceLocation(RolePlaySkills.ID, "glazed_terracotta_white"),
+                null,
+                new ItemStack(Blocks.WHITE_GLAZED_TERRACOTTA),
+                Ingredient.fromItem(ModItems.SLAG_GLAZED_TERRACOTTA_WHITE)
+        );
+        GameRegistry.addShapelessRecipe(
+                new ResourceLocation(RolePlaySkills.ID, "glazed_terracotta_yellow"),
+                null,
+                new ItemStack(Blocks.YELLOW_GLAZED_TERRACOTTA),
+                Ingredient.fromItem(ModItems.SLAG_GLAZED_TERRACOTTA_YELLOW)
+        );
 
         if (Loader.isModLoaded("forestry")) {
             GameRegistry.addShapelessRecipe(

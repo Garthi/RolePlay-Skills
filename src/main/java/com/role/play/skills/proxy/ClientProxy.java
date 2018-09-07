@@ -2,7 +2,7 @@ package com.role.play.skills.proxy;
 
 import com.role.play.skills.common.RecipeBook;
 import com.role.play.skills.common.modules.ModItems;
-import com.role.play.skills.utilities.BookModelForgetting;
+import com.role.play.skills.utilities.books.*;
 import net.minecraft.client.renderer.block.model.IBakedModel;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.client.event.ModelBakeEvent;
@@ -62,6 +62,86 @@ public class ClientProxy extends CommonProxy
             
             BookModelForgetting customModel = new BookModelForgetting(existingModel);
             event.getModelRegistry().putObject(BookModelForgetting.modelResourceLocation, customModel);
+        }
+        
+        object = event.getModelRegistry().getObject(BookModelLumberjack.modelResourceLocation);
+        if (object instanceof IBakedModel) {
+            IBakedModel existingModel = (IBakedModel) object;
+
+            BookModelLumberjack customModel = new BookModelLumberjack(existingModel);
+            event.getModelRegistry().putObject(BookModelLumberjack.modelResourceLocation, customModel);
+        }
+
+        object = event.getModelRegistry().getObject(BookModelBlacksmith.modelResourceLocation);
+        if (object instanceof IBakedModel) {
+            IBakedModel existingModel = (IBakedModel) object;
+
+            BookModelBlacksmith customModel = new BookModelBlacksmith(existingModel);
+            event.getModelRegistry().putObject(BookModelBlacksmith.modelResourceLocation, customModel);
+        }
+        
+        object = event.getModelRegistry().getObject(BookModelLibrarian.modelResourceLocation);
+        if (object instanceof IBakedModel) {
+            IBakedModel existingModel = (IBakedModel) object;
+
+            BookModelLibrarian customModel = new BookModelLibrarian(existingModel);
+            event.getModelRegistry().putObject(BookModelLibrarian.modelResourceLocation, customModel);
+        }
+
+        object = event.getModelRegistry().getObject(BookModelAnimalBreeder.modelResourceLocation);
+        if (object instanceof IBakedModel) {
+            IBakedModel existingModel = (IBakedModel) object;
+
+            BookModelAnimalBreeder customModel = new BookModelAnimalBreeder(existingModel);
+            event.getModelRegistry().putObject(BookModelAnimalBreeder.modelResourceLocation, customModel);
+        }
+
+        object = event.getModelRegistry().getObject(BookModelBaker.modelResourceLocation);
+        if (object instanceof IBakedModel) {
+            IBakedModel existingModel = (IBakedModel) object;
+
+            BookModelBaker customModel = new BookModelBaker(existingModel);
+            event.getModelRegistry().putObject(BookModelBaker.modelResourceLocation, customModel);
+        }
+
+        object = event.getModelRegistry().getObject(BookModelButcher.modelResourceLocation);
+        if (object instanceof IBakedModel) {
+            IBakedModel existingModel = (IBakedModel) object;
+
+            BookModelButcher customModel = new BookModelButcher(existingModel);
+            event.getModelRegistry().putObject(BookModelButcher.modelResourceLocation, customModel);
+        }
+
+        object = event.getModelRegistry().getObject(BookModelConfectioner.modelResourceLocation);
+        if (object instanceof IBakedModel) {
+            IBakedModel existingModel = (IBakedModel) object;
+
+            BookModelConfectioner customModel = new BookModelConfectioner(existingModel);
+            event.getModelRegistry().putObject(BookModelConfectioner.modelResourceLocation, customModel);
+        }
+
+        object = event.getModelRegistry().getObject(BookModelCook.modelResourceLocation);
+        if (object instanceof IBakedModel) {
+            IBakedModel existingModel = (IBakedModel) object;
+
+            BookModelCook customModel = new BookModelCook(existingModel);
+            event.getModelRegistry().putObject(BookModelCook.modelResourceLocation, customModel);
+        }
+
+        object = event.getModelRegistry().getObject(BookModelFishCook.modelResourceLocation);
+        if (object instanceof IBakedModel) {
+            IBakedModel existingModel = (IBakedModel) object;
+
+            BookModelFishCook customModel = new BookModelFishCook(existingModel);
+            event.getModelRegistry().putObject(BookModelFishCook.modelResourceLocation, customModel);
+        }
+
+        object = event.getModelRegistry().getObject(BookModelFisher.modelResourceLocation);
+        if (object instanceof IBakedModel) {
+            IBakedModel existingModel = (IBakedModel) object;
+
+            BookModelFisher customModel = new BookModelFisher(existingModel);
+            event.getModelRegistry().putObject(BookModelFisher.modelResourceLocation, customModel);
         }
     }
 }

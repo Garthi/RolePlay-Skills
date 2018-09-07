@@ -28,4 +28,8 @@ public class BiomesoplentyItems
     {
         return Block.REGISTRY.getObject(new ResourceLocation("biomesoplenty:log_4"));
     }
+    public static Block biomesoplentyWhiteSand()
+    {
+        return Block.REGISTRY.getObject(new ResourceLocation("biomesoplenty:white_sand"));
+    }
 }

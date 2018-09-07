@@ -1,8 +1,6 @@
-package com.role.play.skills.common.modules;
+package com.role.play.skills.common.modules.books;
 
-import com.role.play.skills.common.RecipeBook;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
@@ -14,24 +12,18 @@ import org.apache.logging.log4j.Level;
 /**
  * @author Martin "Garth" Zander <garth@new-crusader.de>
  */
-public class ItemBookForgetting extends ItemBookAbstract
+public class ItemBookLumberjack extends ItemBookAbstract
 {
-    public ItemBookForgetting()
+    public ItemBookLumberjack()
     {
-        super("book_forgetting");
+        super("book_lumberjack");
     }
 
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn)
     {
-        FMLLog.log.log(Level.INFO, "use book item");
-        
-        try {
-            RecipeBook recipeBook = RecipeBook.getInstance();
-            recipeBook.removeCraftingRecipes((EntityPlayerMP) playerIn);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        // TODO add recipes
+        FMLLog.log.log(Level.INFO, "use book lumberjack item");
         
         return new ActionResult<>(EnumActionResult.PASS, playerIn.getHeldItem(handIn));
     }

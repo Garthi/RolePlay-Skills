@@ -1,0 +1,17 @@
+{
+  "type": "forge:ore_shapeless",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "roleplayskills:glass_ball"
+    }
+  },
+  "result": {
+    "item": "minecraft:glass_pane",
+    "data": 0,
+    "count": 1
+  }
+}
