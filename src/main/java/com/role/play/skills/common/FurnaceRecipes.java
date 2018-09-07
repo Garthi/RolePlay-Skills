@@ -60,6 +60,7 @@ public class FurnaceRecipes
                 0.15F
         );
         furnaceRecipes.addSmelting(Items.CHORUS_FRUIT, new ItemStack(Items.CHORUS_FRUIT_POPPED), 0.1F);
+        furnaceRecipes.addSmelting(Items.CLAY_BALL, new ItemStack(Items.BRICK), 0.3F);
 
         // custom recipes
         furnaceRecipes.addSmeltingRecipeForBlock(
@@ -222,6 +223,11 @@ public class FurnaceRecipes
         }
         
         if (Loader.isModLoaded("biomesoplenty")) {
+            furnaceRecipes.addSmeltingRecipe(
+                    new ItemStack(BiomesoplentyItems.biomesoplentyMud(), 1, 0),
+                    new ItemStack(Blocks.DIRT),
+                    0.1F
+            );
             furnaceRecipes.addSmeltingRecipe(
                     new ItemStack(BiomesoplentyItems.biomesoplentyLog0(), 1, 4),
                     new ItemStack(ModItems.RAW_CHARCOAL),
