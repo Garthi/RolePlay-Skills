@@ -7,6 +7,7 @@ import com.role.play.skills.common.modules.RusticItems;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Loader;
@@ -71,34 +72,91 @@ public class FurnaceRecipes
                 new ItemStack(ModItems.SLAG_STONEBRICK_CRACKED),
                 0.1F
         );
-        furnaceRecipes.addSmeltingRecipeForBlock(
-                Blocks.NETHERRACK,
-                new ItemStack(ModItems.SLAG_NETHERBRICK),
+        furnaceRecipes.addSmeltingRecipeForBlock(Blocks.NETHERRACK, new ItemStack(ModItems.SLAG_NETHERBRICK), 0.1F);
+        furnaceRecipes.addSmeltingRecipeForBlock(Blocks.IRON_ORE, new ItemStack(ModItems.SLAG_IRON_INGOT), 0.7F);
+        furnaceRecipes.addSmeltingRecipeForBlock(Blocks.GOLD_ORE, new ItemStack(ModItems.SLAG_GOLD_INGOT), 1.0F);
+        furnaceRecipes.addSmeltingRecipeForBlock(Blocks.LOG, new ItemStack(ModItems.RAW_CHARCOAL), 0.1F);
+        furnaceRecipes.addSmeltingRecipeForBlock(Blocks.LOG2, new ItemStack(ModItems.RAW_CHARCOAL), 0.1F);
+        furnaceRecipes.addSmeltingRecipeForBlock(Blocks.SAND, new ItemStack(ModItems.GLASS_BALL), 0.1F);
+        furnaceRecipes.addSmeltingRecipeForBlock(Blocks.CLAY, new ItemStack(ModItems.SLAG_HARDENED_CLAY), 0.35F);
+        furnaceRecipes.addSmeltingRecipe(
+                new ItemStack(Blocks.STAINED_HARDENED_CLAY, 1, EnumDyeColor.WHITE.getMetadata()),
+                new ItemStack(ModItems.SLAG_GLAZED_TERRACOTTA_WHITE),
                 0.1F
         );
-        furnaceRecipes.addSmeltingRecipeForBlock(
-                Blocks.IRON_ORE,
-                new ItemStack(ModItems.SLAG_IRON_INGOT),
-                0.7F
-        );
-        furnaceRecipes.addSmeltingRecipeForBlock(
-                Blocks.GOLD_ORE,
-                new ItemStack(ModItems.SLAG_GOLD_INGOT),
-                1.0F
-        );
-        furnaceRecipes.addSmeltingRecipeForBlock(
-                Blocks.LOG,
-                new ItemStack(ModItems.RAW_CHARCOAL),
+        furnaceRecipes.addSmeltingRecipe(
+                new ItemStack(Blocks.STAINED_HARDENED_CLAY, 1, EnumDyeColor.ORANGE.getMetadata()),
+                new ItemStack(ModItems.SLAG_GLAZED_TERRACOTTA_ORANGE),
                 0.1F
         );
-        furnaceRecipes.addSmeltingRecipeForBlock(
-                Blocks.LOG2,
-                new ItemStack(ModItems.RAW_CHARCOAL),
+        furnaceRecipes.addSmeltingRecipe(
+                new ItemStack(Blocks.STAINED_HARDENED_CLAY, 1, EnumDyeColor.MAGENTA.getMetadata()),
+                new ItemStack(ModItems.SLAG_GLAZED_TERRACOTTA_MAGENTA),
                 0.1F
         );
-        furnaceRecipes.addSmeltingRecipeForBlock(
-                Blocks.SAND,
-                new ItemStack(ModItems.GLASS_BALL),
+        furnaceRecipes.addSmeltingRecipe(
+                new ItemStack(Blocks.STAINED_HARDENED_CLAY, 1, EnumDyeColor.LIGHT_BLUE.getMetadata()),
+                new ItemStack(ModItems.SLAG_GLAZED_TERRACOTTA_LIGHT_BLUE),
+                0.1F
+        );
+        furnaceRecipes.addSmeltingRecipe(
+                new ItemStack(Blocks.STAINED_HARDENED_CLAY, 1, EnumDyeColor.YELLOW.getMetadata()),
+                new ItemStack(ModItems.SLAG_GLAZED_TERRACOTTA_YELLOW),
+                0.1F
+        );
+        furnaceRecipes.addSmeltingRecipe(
+                new ItemStack(Blocks.STAINED_HARDENED_CLAY, 1, EnumDyeColor.LIME.getMetadata()),
+                new ItemStack(ModItems.SLAG_GLAZED_TERRACOTTA_LIME),
+                0.1F
+        );
+        furnaceRecipes.addSmeltingRecipe(
+                new ItemStack(Blocks.STAINED_HARDENED_CLAY, 1, EnumDyeColor.PINK.getMetadata()),
+                new ItemStack(ModItems.SLAG_GLAZED_TERRACOTTA_PINK),
+                0.1F
+        );
+        furnaceRecipes.addSmeltingRecipe(
+                new ItemStack(Blocks.STAINED_HARDENED_CLAY, 1, EnumDyeColor.GRAY.getMetadata()),
+                new ItemStack(ModItems.SLAG_GLAZED_TERRACOTTA_GRAY),
+                0.1F
+        );
+        furnaceRecipes.addSmeltingRecipe(
+                new ItemStack(Blocks.STAINED_HARDENED_CLAY, 1, EnumDyeColor.SILVER.getMetadata()),
+                new ItemStack(ModItems.SLAG_GLAZED_TERRACOTTA_SILVER),
+                0.1F
+        );
+        furnaceRecipes.addSmeltingRecipe(
+                new ItemStack(Blocks.STAINED_HARDENED_CLAY, 1, EnumDyeColor.CYAN.getMetadata()),
+                new ItemStack(ModItems.SLAG_GLAZED_TERRACOTTA_CYAN),
+                0.1F
+        );
+        furnaceRecipes.addSmeltingRecipe(
+                new ItemStack(Blocks.STAINED_HARDENED_CLAY, 1, EnumDyeColor.PURPLE.getMetadata()),
+                new ItemStack(ModItems.SLAG_GLAZED_TERRACOTTA_PURPLE),
+                0.1F
+        );
+        furnaceRecipes.addSmeltingRecipe(
+                new ItemStack(Blocks.STAINED_HARDENED_CLAY, 1, EnumDyeColor.BLUE.getMetadata()),
+                new ItemStack(ModItems.SLAG_GLAZED_TERRACOTTA_BLUE),
+                0.1F
+        );
+        furnaceRecipes.addSmeltingRecipe(
+                new ItemStack(Blocks.STAINED_HARDENED_CLAY, 1, EnumDyeColor.BROWN.getMetadata()),
+                new ItemStack(ModItems.SLAG_GLAZED_TERRACOTTA_BROWN),
+                0.1F
+        );
+        furnaceRecipes.addSmeltingRecipe(
+                new ItemStack(Blocks.STAINED_HARDENED_CLAY, 1, EnumDyeColor.GREEN.getMetadata()),
+                new ItemStack(ModItems.SLAG_GLAZED_TERRACOTTA_GREEN),
+                0.1F
+        );
+        furnaceRecipes.addSmeltingRecipe(
+                new ItemStack(Blocks.STAINED_HARDENED_CLAY, 1, EnumDyeColor.RED.getMetadata()),
+                new ItemStack(ModItems.SLAG_GLAZED_TERRACOTTA_RED),
+                0.1F
+        );
+        furnaceRecipes.addSmeltingRecipe(
+                new ItemStack(Blocks.STAINED_HARDENED_CLAY, 1, EnumDyeColor.BLACK.getMetadata()),
+                new ItemStack(ModItems.SLAG_GLAZED_TERRACOTTA_BLACK),
                 0.1F
         );
 

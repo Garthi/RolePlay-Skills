@@ -15,6 +15,23 @@ public class ModItems
     public static SmeltingItem SLAG_GOLD_INGOT;
     public static SmeltingItem RAW_CHARCOAL;
     public static SmeltingItem GLASS_BALL;
+    public static SmeltingItem SLAG_HARDENED_CLAY;
+    public static SmeltingItem SLAG_GLAZED_TERRACOTTA_BLACK;
+    public static SmeltingItem SLAG_GLAZED_TERRACOTTA_BLUE;
+    public static SmeltingItem SLAG_GLAZED_TERRACOTTA_BROWN;
+    public static SmeltingItem SLAG_GLAZED_TERRACOTTA_CYAN;
+    public static SmeltingItem SLAG_GLAZED_TERRACOTTA_GRAY;
+    public static SmeltingItem SLAG_GLAZED_TERRACOTTA_GREEN;
+    public static SmeltingItem SLAG_GLAZED_TERRACOTTA_LIGHT_BLUE;
+    public static SmeltingItem SLAG_GLAZED_TERRACOTTA_LIME;
+    public static SmeltingItem SLAG_GLAZED_TERRACOTTA_MAGENTA;
+    public static SmeltingItem SLAG_GLAZED_TERRACOTTA_ORANGE;
+    public static SmeltingItem SLAG_GLAZED_TERRACOTTA_PINK;
+    public static SmeltingItem SLAG_GLAZED_TERRACOTTA_PURPLE;
+    public static SmeltingItem SLAG_GLAZED_TERRACOTTA_RED;
+    public static SmeltingItem SLAG_GLAZED_TERRACOTTA_SILVER;
+    public static SmeltingItem SLAG_GLAZED_TERRACOTTA_WHITE;
+    public static SmeltingItem SLAG_GLAZED_TERRACOTTA_YELLOW;
     public static ItemBookForgetting BOOK;
     
     public static void init()
@@ -26,6 +43,23 @@ public class ModItems
         SLAG_GOLD_INGOT = new SmeltingItem("slag_gold_ingot");
         RAW_CHARCOAL = new SmeltingItem("raw_charcoal");
         GLASS_BALL = new SmeltingItem("glass_ball");
+        SLAG_HARDENED_CLAY = new SmeltingItem("slag_hardened_clay");
+        SLAG_GLAZED_TERRACOTTA_BLACK = new SmeltingItem("slag_glazed_terracotta_black");
+        SLAG_GLAZED_TERRACOTTA_BLUE = new SmeltingItem("slag_glazed_terracotta_blue");
+        SLAG_GLAZED_TERRACOTTA_BROWN = new SmeltingItem("slag_glazed_terracotta_brown");
+        SLAG_GLAZED_TERRACOTTA_CYAN = new SmeltingItem("slag_glazed_terracotta_cyan");
+        SLAG_GLAZED_TERRACOTTA_GRAY = new SmeltingItem("slag_glazed_terracotta_gray");
+        SLAG_GLAZED_TERRACOTTA_GREEN = new SmeltingItem("slag_glazed_terracotta_green");
+        SLAG_GLAZED_TERRACOTTA_LIGHT_BLUE = new SmeltingItem("slag_glazed_terracotta_light_blue");
+        SLAG_GLAZED_TERRACOTTA_LIME = new SmeltingItem("slag_glazed_terracotta_lime");
+        SLAG_GLAZED_TERRACOTTA_MAGENTA = new SmeltingItem("slag_glazed_terracotta_magenta");
+        SLAG_GLAZED_TERRACOTTA_ORANGE = new SmeltingItem("slag_glazed_terracotta_orange");
+        SLAG_GLAZED_TERRACOTTA_PINK = new SmeltingItem("slag_glazed_terracotta_pink");
+        SLAG_GLAZED_TERRACOTTA_PURPLE = new SmeltingItem("slag_glazed_terracotta_purple");
+        SLAG_GLAZED_TERRACOTTA_RED = new SmeltingItem("slag_glazed_terracotta_red");
+        SLAG_GLAZED_TERRACOTTA_SILVER = new SmeltingItem("slag_glazed_terracotta_silver");
+        SLAG_GLAZED_TERRACOTTA_WHITE = new SmeltingItem("slag_glazed_terracotta_white");
+        SLAG_GLAZED_TERRACOTTA_YELLOW = new SmeltingItem("slag_glazed_terracotta_yellow");
         BOOK = new ItemBookForgetting();
     }
     
@@ -39,6 +73,23 @@ public class ModItems
         SLAG_GOLD_INGOT.initModel();
         RAW_CHARCOAL.initModel();
         GLASS_BALL.initModel();
+        SLAG_HARDENED_CLAY.initModel();
+        SLAG_GLAZED_TERRACOTTA_BLACK.initModel();
+        SLAG_GLAZED_TERRACOTTA_BLUE.initModel();
+        SLAG_GLAZED_TERRACOTTA_BROWN.initModel();
+        SLAG_GLAZED_TERRACOTTA_CYAN.initModel();
+        SLAG_GLAZED_TERRACOTTA_GRAY.initModel();
+        SLAG_GLAZED_TERRACOTTA_GREEN.initModel();
+        SLAG_GLAZED_TERRACOTTA_LIGHT_BLUE.initModel();
+        SLAG_GLAZED_TERRACOTTA_LIME.initModel();
+        SLAG_GLAZED_TERRACOTTA_MAGENTA.initModel();
+        SLAG_GLAZED_TERRACOTTA_ORANGE.initModel();
+        SLAG_GLAZED_TERRACOTTA_PINK.initModel();
+        SLAG_GLAZED_TERRACOTTA_PURPLE.initModel();
+        SLAG_GLAZED_TERRACOTTA_RED.initModel();
+        SLAG_GLAZED_TERRACOTTA_SILVER.initModel();
+        SLAG_GLAZED_TERRACOTTA_WHITE.initModel();
+        SLAG_GLAZED_TERRACOTTA_YELLOW.initModel();
         BOOK.initModel();
     }
 }

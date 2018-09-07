@@ -1,0 +1,13 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "roleplayskills:slag_glazed_terracotta_pink"
+    }
+  ],
+  "result": {
+    "item": "minecraft:glazed_terracotta_pink",
+    "data": 0,
+    "count": 1
+  }
+}
