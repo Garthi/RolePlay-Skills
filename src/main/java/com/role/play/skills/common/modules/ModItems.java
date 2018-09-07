@@ -1,5 +1,9 @@
 package com.role.play.skills.common.modules;
 
+import com.role.play.skills.common.modules.books.ItemBookBlacksmith;
+import com.role.play.skills.common.modules.books.ItemBookForgetting;
+import com.role.play.skills.common.modules.books.ItemBookLibrarian;
+import com.role.play.skills.common.modules.books.ItemBookLumberjack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -32,7 +36,10 @@ public class ModItems
     public static SmeltingItem SLAG_GLAZED_TERRACOTTA_SILVER;
     public static SmeltingItem SLAG_GLAZED_TERRACOTTA_WHITE;
     public static SmeltingItem SLAG_GLAZED_TERRACOTTA_YELLOW;
-    public static ItemBookForgetting BOOK;
+    public static ItemBookForgetting BOOK_FORGETTING;
+    public static ItemBookLumberjack BOOK_LUMBERJACK;
+    public static ItemBookBlacksmith BOOK_BLACKSMITH;
+    public static ItemBookLibrarian BOOK_LIBRARIAN;
     
     public static void init()
     {
@@ -60,7 +67,11 @@ public class ModItems
         SLAG_GLAZED_TERRACOTTA_SILVER = new SmeltingItem("slag_glazed_terracotta_silver");
         SLAG_GLAZED_TERRACOTTA_WHITE = new SmeltingItem("slag_glazed_terracotta_white");
         SLAG_GLAZED_TERRACOTTA_YELLOW = new SmeltingItem("slag_glazed_terracotta_yellow");
-        BOOK = new ItemBookForgetting();
+        
+        BOOK_FORGETTING = new ItemBookForgetting();
+        BOOK_LUMBERJACK = new ItemBookLumberjack();
+        BOOK_BLACKSMITH = new ItemBookBlacksmith();
+        BOOK_LIBRARIAN = new ItemBookLibrarian();
     }
     
     @SideOnly(Side.CLIENT)
@@ -90,6 +101,10 @@ public class ModItems
         SLAG_GLAZED_TERRACOTTA_SILVER.initModel();
         SLAG_GLAZED_TERRACOTTA_WHITE.initModel();
         SLAG_GLAZED_TERRACOTTA_YELLOW.initModel();
-        BOOK.initModel();
+        
+        BOOK_FORGETTING.initModel();
+        BOOK_LUMBERJACK.initModel();
+        BOOK_BLACKSMITH.initModel();
+        BOOK_LIBRARIAN.initModel();
     }
 }

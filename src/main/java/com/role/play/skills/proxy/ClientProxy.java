@@ -2,7 +2,10 @@ package com.role.play.skills.proxy;
 
 import com.role.play.skills.common.RecipeBook;
 import com.role.play.skills.common.modules.ModItems;
-import com.role.play.skills.utilities.BookModelForgetting;
+import com.role.play.skills.utilities.books.BookModelBlacksmith;
+import com.role.play.skills.utilities.books.BookModelForgetting;
+import com.role.play.skills.utilities.books.BookModelLibrarian;
+import com.role.play.skills.utilities.books.BookModelLumberjack;
 import net.minecraft.client.renderer.block.model.IBakedModel;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.client.event.ModelBakeEvent;
@@ -62,6 +65,30 @@ public class ClientProxy extends CommonProxy
             
             BookModelForgetting customModel = new BookModelForgetting(existingModel);
             event.getModelRegistry().putObject(BookModelForgetting.modelResourceLocation, customModel);
+        }
+        
+        object = event.getModelRegistry().getObject(BookModelLumberjack.modelResourceLocation);
+        if (object instanceof IBakedModel) {
+            IBakedModel existingModel = (IBakedModel) object;
+
+            BookModelLumberjack customModel = new BookModelLumberjack(existingModel);
+            event.getModelRegistry().putObject(BookModelLumberjack.modelResourceLocation, customModel);
+        }
+
+        object = event.getModelRegistry().getObject(BookModelBlacksmith.modelResourceLocation);
+        if (object instanceof IBakedModel) {
+            IBakedModel existingModel = (IBakedModel) object;
+
+            BookModelBlacksmith customModel = new BookModelBlacksmith(existingModel);
+            event.getModelRegistry().putObject(BookModelBlacksmith.modelResourceLocation, customModel);
+        }
+        
+        object = event.getModelRegistry().getObject(BookModelLibrarian.modelResourceLocation);
+        if (object instanceof IBakedModel) {
+            IBakedModel existingModel = (IBakedModel) object;
+
+            BookModelLibrarian customModel = new BookModelLibrarian(existingModel);
+            event.getModelRegistry().putObject(BookModelLibrarian.modelResourceLocation, customModel);
         }
     }
 }

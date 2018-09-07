@@ -1,4 +1,4 @@
-package com.role.play.skills.utilities;
+package com.role.play.skills.utilities.books;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
@@ -21,8 +21,10 @@ import java.util.List;
 /**
  * @author Martin "Garth" Zander <garth@new-crusader.de>
  */
-abstract class BookModelAbstract implements IBakedModel
+public abstract class BookModelAbstract implements IBakedModel
 {
+    public static ModelResourceLocation modelResourceLocation;
+            
     private static final ResourceLocation font = new ResourceLocation("minecraft", "textures/font/ascii.png");
     private static final ResourceLocation font2 = new ResourceLocation("minecraft", "font/ascii");
     
@@ -36,6 +38,11 @@ abstract class BookModelAbstract implements IBakedModel
         this.textQuads = new ArrayList<>();
         
         initText();
+    }
+    
+    public static ModelResourceLocation getModelResourceLocation()
+    {
+        return modelResourceLocation;
     }
 
     @SideOnly(Side.CLIENT)
@@ -73,15 +80,13 @@ abstract class BookModelAbstract implements IBakedModel
         TextureAtlasSprite fontSprite = Minecraft.getMinecraft().getTextureMapBlocks().getAtlasSprite(font2.toString());
         fontRenderer.setSprite(fontSprite);
         fontRenderer.setFillBlanks(false);
-
-        
         
         int yOffset = 2;
         String title = this.getBookName();
         List<String> lines = fontRenderer.listFormattedStringToWidth(title, maxLineWidth);
-        for (int line = 0; line < lines.size(); line++) {
-            int offset = ((maxLineWidth - fontRenderer.getStringWidth(lines.get(line))) / 2);
-            fontRenderer.drawString(lines.get(line), offset, yOffset, 0x414141);
+        for (String line : lines) {
+            int offset = ((maxLineWidth - fontRenderer.getStringWidth(line)) / 2);
+            fontRenderer.drawString(line, offset, yOffset, 0x414141);
             yOffset += (fontRenderer.FONT_HEIGHT);
         }
 

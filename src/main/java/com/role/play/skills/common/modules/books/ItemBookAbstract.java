@@ -1,4 +1,4 @@
-package com.role.play.skills.common.modules;
+package com.role.play.skills.common.modules.books;
 
 import com.role.play.skills.RolePlaySkills;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
