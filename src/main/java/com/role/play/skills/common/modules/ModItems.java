@@ -1,9 +1,6 @@
 package com.role.play.skills.common.modules;
 
-import com.role.play.skills.common.modules.books.ItemBookBlacksmith;
-import com.role.play.skills.common.modules.books.ItemBookForgetting;
-import com.role.play.skills.common.modules.books.ItemBookLibrarian;
-import com.role.play.skills.common.modules.books.ItemBookLumberjack;
+import com.role.play.skills.common.modules.books.*;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -40,6 +37,13 @@ public class ModItems
     public static ItemBookLumberjack BOOK_LUMBERJACK;
     public static ItemBookBlacksmith BOOK_BLACKSMITH;
     public static ItemBookLibrarian BOOK_LIBRARIAN;
+    public static ItemBookAnimalBreeder BOOK_ANIMAL_BREEDER;
+    public static ItemBookBaker BOOK_BAKER;
+    public static ItemBookButcher BOOK_BUTCHER;
+    public static ItemBookConfectioner BOOK_CONFECTIONER;
+    public static ItemBookCook BOOK_COOK;
+    public static ItemBookFishCook BOOK_FISH_COOK;
+    public static ItemBookFisher BOOK_FISHER;
     
     public static void init()
     {
@@ -72,6 +76,13 @@ public class ModItems
         BOOK_LUMBERJACK = new ItemBookLumberjack();
         BOOK_BLACKSMITH = new ItemBookBlacksmith();
         BOOK_LIBRARIAN = new ItemBookLibrarian();
+        BOOK_ANIMAL_BREEDER = new ItemBookAnimalBreeder();
+        BOOK_BAKER = new ItemBookBaker();
+        BOOK_BUTCHER = new ItemBookButcher();
+        BOOK_CONFECTIONER = new ItemBookConfectioner();
+        BOOK_COOK = new ItemBookCook();
+        BOOK_FISH_COOK = new ItemBookFishCook();
+        BOOK_FISHER = new ItemBookFisher();
     }
     
     @SideOnly(Side.CLIENT)
@@ -106,5 +117,12 @@ public class ModItems
         BOOK_LUMBERJACK.initModel();
         BOOK_BLACKSMITH.initModel();
         BOOK_LIBRARIAN.initModel();
+        BOOK_ANIMAL_BREEDER.initModel();
+        BOOK_BAKER.initModel();
+        BOOK_BUTCHER.initModel();
+        BOOK_CONFECTIONER.initModel();
+        BOOK_COOK.initModel();
+        BOOK_FISH_COOK.initModel();
+        BOOK_FISHER.initModel();
     }
 }
