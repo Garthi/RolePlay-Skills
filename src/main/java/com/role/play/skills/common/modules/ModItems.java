@@ -46,6 +46,9 @@ public class ModItems
     public static ItemBookCook BOOK_COOK;
     public static ItemBookFishCook BOOK_FISH_COOK;
     public static ItemBookFisher BOOK_FISHER;
+    public static ItemBookFarmer BOOK_FARMER;
+    public static ItemBookPlantBreeder BOOK_PLANT_BREEDER;
+    public static ItemBookTreeRefiner BOOK_TREE_REFINER;
     
     public static void init()
     {
@@ -87,6 +90,9 @@ public class ModItems
         BOOK_COOK = new ItemBookCook();
         BOOK_FISH_COOK = new ItemBookFishCook();
         BOOK_FISHER = new ItemBookFisher();
+        BOOK_FARMER = new ItemBookFarmer();
+        BOOK_PLANT_BREEDER = new ItemBookPlantBreeder();
+        BOOK_TREE_REFINER = new ItemBookTreeRefiner();
     }
     
     @SideOnly(Side.CLIENT)
@@ -130,5 +136,8 @@ public class ModItems
         BOOK_COOK.initModel();
         BOOK_FISH_COOK.initModel();
         BOOK_FISHER.initModel();
+        BOOK_FARMER.initModel();
+        BOOK_PLANT_BREEDER.initModel();
+        BOOK_TREE_REFINER.initModel();
     }
 }
