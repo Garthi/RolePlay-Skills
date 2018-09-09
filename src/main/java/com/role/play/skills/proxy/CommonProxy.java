@@ -1,5 +1,6 @@
 package com.role.play.skills.proxy;
 
+import com.role.play.skills.RolePlaySkills;
 import com.role.play.skills.common.FurnaceRecipes;
 import com.role.play.skills.common.RecipeBook;
 import com.role.play.skills.common.modules.ModItems;
@@ -33,11 +34,15 @@ public class CommonProxy
 {
     public void preInit(FMLPreInitializationEvent event)
     {
-        ConfigHelper.init(event.getSuggestedConfigurationFile());
+        ConfigHelper.init(
+                new File(event.getModConfigurationDirectory() + "/society", RolePlaySkills.ID + ".cfg")
+        );
 
         ModItems.init();
         
-        RecipeBookRemoverDatabase.init(new File(event.getModConfigurationDirectory(), "recipeBookRemoverDatabase.cfg"));
+        RecipeBookRemoverDatabase.init(
+                new File(event.getModConfigurationDirectory() + "/society", "recipeBookRemoverDatabase.cfg")
+        );
         
         MinecraftForge.EVENT_BUS.register(this);
     }
