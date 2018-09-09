@@ -49,6 +49,17 @@ public class ModItems
     public static ItemBookFarmer BOOK_FARMER;
     public static ItemBookPlantBreeder BOOK_PLANT_BREEDER;
     public static ItemBookTreeRefiner BOOK_TREE_REFINER;
+    public static ItemBookAlchemist BOOK_ALCHEMIST;
+    public static ItemBookBarkeeper BOOK_BARKEEPER;
+    public static ItemBookBurner BOOK_BURNER;
+    public static ItemBookCarpenter BOOK_CARPENTER;
+    public static ItemBookDigger BOOK_DIGGER;
+    public static ItemBookGlazier BOOK_GLAZIER;
+    public static ItemBookHealer BOOK_HEALER;
+    public static ItemBookIceCreamMaker BOOK_ICE_CREAM_MAKER;
+    public static ItemBookStonemason BOOK_STONEMASON;
+    public static ItemBookTailor BOOK_TAILOR;
+    public static ItemBookToolmaker BOOK_TOOLMAKER;
     
     public static void init()
     {
@@ -93,6 +104,17 @@ public class ModItems
         BOOK_FARMER = new ItemBookFarmer();
         BOOK_PLANT_BREEDER = new ItemBookPlantBreeder();
         BOOK_TREE_REFINER = new ItemBookTreeRefiner();
+        BOOK_ALCHEMIST = new ItemBookAlchemist();
+        BOOK_BARKEEPER = new ItemBookBarkeeper();
+        BOOK_BURNER = new ItemBookBurner();
+        BOOK_CARPENTER = new ItemBookCarpenter();
+        BOOK_DIGGER = new ItemBookDigger();
+        BOOK_GLAZIER = new ItemBookGlazier();
+        BOOK_HEALER = new ItemBookHealer();
+        BOOK_ICE_CREAM_MAKER = new ItemBookIceCreamMaker();
+        BOOK_STONEMASON = new ItemBookStonemason();
+        BOOK_TAILOR = new ItemBookTailor();
+        BOOK_TOOLMAKER = new ItemBookToolmaker();
     }
     
     @SideOnly(Side.CLIENT)
@@ -139,5 +161,16 @@ public class ModItems
         BOOK_FARMER.initModel();
         BOOK_PLANT_BREEDER.initModel();
         BOOK_TREE_REFINER.initModel();
+        BOOK_ALCHEMIST.initModel();
+        BOOK_BARKEEPER.initModel();
+        BOOK_BURNER.initModel();
+        BOOK_CARPENTER.initModel();
+        BOOK_DIGGER.initModel();
+        BOOK_GLAZIER.initModel();
+        BOOK_HEALER.initModel();
+        BOOK_ICE_CREAM_MAKER.initModel();
+        BOOK_STONEMASON.initModel();
+        BOOK_TAILOR.initModel();
+        BOOK_TOOLMAKER.initModel();
     }
 }

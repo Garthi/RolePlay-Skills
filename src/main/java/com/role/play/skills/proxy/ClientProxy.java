@@ -167,5 +167,93 @@ public class ClientProxy extends CommonProxy
             BookModelTreeRefiner customModel = new BookModelTreeRefiner(existingModel);
             event.getModelRegistry().putObject(BookModelTreeRefiner.modelResourceLocation, customModel);
         }
+
+        object = event.getModelRegistry().getObject(BookModelAlchemist.modelResourceLocation);
+        if (object instanceof IBakedModel) {
+            IBakedModel existingModel = (IBakedModel) object;
+
+            BookModelAlchemist customModel = new BookModelAlchemist(existingModel);
+            event.getModelRegistry().putObject(BookModelAlchemist.modelResourceLocation, customModel);
+        }
+
+        object = event.getModelRegistry().getObject(BookModelBarkeeper.modelResourceLocation);
+        if (object instanceof IBakedModel) {
+            IBakedModel existingModel = (IBakedModel) object;
+
+            BookModelBarkeeper customModel = new BookModelBarkeeper(existingModel);
+            event.getModelRegistry().putObject(BookModelBarkeeper.modelResourceLocation, customModel);
+        }
+
+        object = event.getModelRegistry().getObject(BookModelBurner.modelResourceLocation);
+        if (object instanceof IBakedModel) {
+            IBakedModel existingModel = (IBakedModel) object;
+
+            BookModelBurner customModel = new BookModelBurner(existingModel);
+            event.getModelRegistry().putObject(BookModelBurner.modelResourceLocation, customModel);
+        }
+
+        object = event.getModelRegistry().getObject(BookModelCarpenter.modelResourceLocation);
+        if (object instanceof IBakedModel) {
+            IBakedModel existingModel = (IBakedModel) object;
+
+            BookModelCarpenter customModel = new BookModelCarpenter(existingModel);
+            event.getModelRegistry().putObject(BookModelCarpenter.modelResourceLocation, customModel);
+        }
+
+        object = event.getModelRegistry().getObject(BookModelDigger.modelResourceLocation);
+        if (object instanceof IBakedModel) {
+            IBakedModel existingModel = (IBakedModel) object;
+
+            BookModelDigger customModel = new BookModelDigger(existingModel);
+            event.getModelRegistry().putObject(BookModelDigger.modelResourceLocation, customModel);
+        }
+
+        object = event.getModelRegistry().getObject(BookModelGlazier.modelResourceLocation);
+        if (object instanceof IBakedModel) {
+            IBakedModel existingModel = (IBakedModel) object;
+
+            BookModelGlazier customModel = new BookModelGlazier(existingModel);
+            event.getModelRegistry().putObject(BookModelGlazier.modelResourceLocation, customModel);
+        }
+
+        object = event.getModelRegistry().getObject(BookModelHealer.modelResourceLocation);
+        if (object instanceof IBakedModel) {
+            IBakedModel existingModel = (IBakedModel) object;
+
+            BookModelHealer customModel = new BookModelHealer(existingModel);
+            event.getModelRegistry().putObject(BookModelHealer.modelResourceLocation, customModel);
+        }
+
+        object = event.getModelRegistry().getObject(BookModelIceCreamMaker.modelResourceLocation);
+        if (object instanceof IBakedModel) {
+            IBakedModel existingModel = (IBakedModel) object;
+
+            BookModelIceCreamMaker customModel = new BookModelIceCreamMaker(existingModel);
+            event.getModelRegistry().putObject(BookModelIceCreamMaker.modelResourceLocation, customModel);
+        }
+
+        object = event.getModelRegistry().getObject(BookModelStonemason.modelResourceLocation);
+        if (object instanceof IBakedModel) {
+            IBakedModel existingModel = (IBakedModel) object;
+
+            BookModelStonemason customModel = new BookModelStonemason(existingModel);
+            event.getModelRegistry().putObject(BookModelStonemason.modelResourceLocation, customModel);
+        }
+
+        object = event.getModelRegistry().getObject(BookModelTailor.modelResourceLocation);
+        if (object instanceof IBakedModel) {
+            IBakedModel existingModel = (IBakedModel) object;
+
+            BookModelTailor customModel = new BookModelTailor(existingModel);
+            event.getModelRegistry().putObject(BookModelTailor.modelResourceLocation, customModel);
+        }
+
+        object = event.getModelRegistry().getObject(BookModelToolmaker.modelResourceLocation);
+        if (object instanceof IBakedModel) {
+            IBakedModel existingModel = (IBakedModel) object;
+
+            BookModelToolmaker customModel = new BookModelToolmaker(existingModel);
+            event.getModelRegistry().putObject(BookModelToolmaker.modelResourceLocation, customModel);
+        }
     }
 }
