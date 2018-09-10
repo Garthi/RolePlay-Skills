@@ -1,0 +1,13 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "society:slag_glazed_terracotta_red"
+    }
+  ],
+  "result": {
+    "item": "minecraft:glazed_terracotta_red",
+    "data": 0,
+    "count": 1
+  }
+}

@@ -1,7 +1,0 @@
-{
-    "parent": "block/cube_column",
-    "textures": {
-        "end": "roleplayskills:items/raw_charcoal_top",
-        "side": "roleplayskills:items/raw_charcoal"
-    }
-}

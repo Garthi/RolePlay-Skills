@@ -1,0 +1,14 @@
+{
+  "type": "forge:ore_shapeless",
+  "group": "forestry:ingot_copper",
+  "ingredients": [
+    {
+      "item": "society:slag_copper_ingot"
+    }
+  ],
+  "result": {
+    "item": "forestry:ingot_copper",
+    "data": 0,
+    "count": 1
+  }
+}

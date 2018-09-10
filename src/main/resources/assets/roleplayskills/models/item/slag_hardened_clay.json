@@ -1,6 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "roleplayskills:items/slag_hardened_clay"
-  }
-}

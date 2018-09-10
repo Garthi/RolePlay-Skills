@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "society:items/raw_charcoal_top",
+        "side": "society:items/raw_charcoal"
+    }
+}
