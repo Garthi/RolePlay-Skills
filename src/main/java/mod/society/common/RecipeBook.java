@@ -85,10 +85,7 @@ public class RecipeBook
             return;
         }
 
-        FMLLog.log.log(Level.INFO, "onItemUse book lumberjack item" + book);
-
         List<String> recipes = Arrays.asList(bookRecipes);
-
         List<IRecipe> newRecipes = new ArrayList<>();
 
         for (IRecipe irecipe : ForgeRegistries.RECIPES) {
