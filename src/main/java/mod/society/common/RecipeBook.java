@@ -75,14 +75,14 @@ public class RecipeBook
         player.getRecipeBook().remove(removeRecipes, player);
     }
     
-    public void addRecipesFromBook(EntityPlayerMP entityPlayerMP, AbstractItem book)
+    public boolean addRecipesFromBook(EntityPlayerMP entityPlayerMP, AbstractItem book)
     {
         String[] bookRecipes;
         try {
             bookRecipes = ConfigBookDatabase.get().getBookRecipes(book.toString());
         } catch (NotLoadedException e) {
             e.printStackTrace();
-            return;
+            return false;
         }
 
         List<String> recipes = Arrays.asList(bookRecipes);
@@ -96,11 +96,13 @@ public class RecipeBook
         }
 
         if (newRecipes.isEmpty()) {
-            return;
+            return false;
         }
 
         // add the new recipes to the players RecipeBook
         entityPlayerMP.getRecipeBook().add(newRecipes, entityPlayerMP);
+        
+        return true;
     }
     
     public void addAllCustomRecipes()

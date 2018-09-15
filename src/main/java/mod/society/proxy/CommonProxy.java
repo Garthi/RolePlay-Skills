@@ -113,10 +113,16 @@ public class CommonProxy
         if (currentItem.getUnlocalizedName().startsWith("item.society.book_")
                 && !currentItem.getUnlocalizedName().equals("item.society.book_forgetting"))
         {
-            RecipeBook.getInstance().addRecipesFromBook(entityPlayerMP, (AbstractItem)currentItem);
+            if (RecipeBook.getInstance().addRecipesFromBook(entityPlayerMP, (AbstractItem)currentItem)) {
+                // remove book from main hand
+                entityPlayerMP.inventory.getCurrentItem().setCount(0);
+            }
         } else if (currentItem.getUnlocalizedName().equals("item.society.book_forgetting")) {
             RecipeBook recipeBook = RecipeBook.getInstance();
             recipeBook.removeCraftingRecipes(entityPlayerMP);
+
+            // remove book from main hand
+            entityPlayerMP.inventory.getCurrentItem().setCount(0);
         }
     }
     
