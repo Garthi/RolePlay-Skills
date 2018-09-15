@@ -9,7 +9,7 @@ import java.io.File;
 /**
  * @author Martin "Garth" Zander <garth@new-crusader.de>
  */
-public class ConfigHelper
+public class ConfigHelper extends ConfigAbstract
 {
     private static ConfigHelper instance;
     
@@ -18,13 +18,9 @@ public class ConfigHelper
     private static final String CONFIG_VALUE_REMOVE_RECIPES = "remove_recipes";
     private static final String CONFIG_VALUE_DEFAULT_RECIPES = "default_recipes";
     
-    private Configuration config;
-    
     private ConfigHelper(Configuration config)
     {
-        this.config = config;
-        
-        configureConfig();
+        super(config);
     }
 
     public static ConfigHelper init(File configFile)
@@ -81,13 +77,7 @@ public class ConfigHelper
         return false;
     }
 
-    private Configuration getConfig()
-    {
-        this.config.load();
-        return this.config;
-    }
-    
-    private void configureConfig()
+    protected void configureConfig()
     {
         Configuration configuration = getConfig();
 

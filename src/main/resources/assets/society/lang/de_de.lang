@@ -1,5 +1,4 @@
 
-society.config.reconnect=Konfiguration abgeschlossen, bitte erneut verbinden!
 society.command.reset.help=/%s <player>
 society.command.player.not.found=Spieler %s konnte nicht gefunden werden
 society.command.reset.success.message=Resepte wurden zurück gesetzt für Spieler %s

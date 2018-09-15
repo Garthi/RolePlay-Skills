@@ -3,16 +3,20 @@ package mod.society.proxy;
 import mod.society.Society;
 import mod.society.common.FurnaceRecipes;
 import mod.society.common.RecipeBook;
+import mod.society.common.modules.AbstractItem;
 import mod.society.common.modules.ModItems;
+import mod.society.utilities.ConfigBookDatabase;
 import mod.society.utilities.ConfigHelper;
-import mod.society.utilities.RecipeBookRemoverDatabase;
+import mod.society.utilities.ConfigRecipeRemoverDatabase;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fml.common.FMLLog;
@@ -38,10 +42,14 @@ public class CommonProxy
                 new File(event.getModConfigurationDirectory() + "/society", Society.ID + ".cfg")
         );
 
+        ConfigBookDatabase.init(
+                new File(event.getModConfigurationDirectory() + "/society", "book_configuration.cfg")
+        );
+
         ModItems.init();
         
-        RecipeBookRemoverDatabase.init(
-                new File(event.getModConfigurationDirectory() + "/society", "recipeBookRemoverDatabase.cfg")
+        ConfigRecipeRemoverDatabase.init(
+                new File(event.getModConfigurationDirectory() + "/society", "recipe_book_remover_database.cfg")
         );
         
         MinecraftForge.EVENT_BUS.register(this);
@@ -87,6 +95,29 @@ public class CommonProxy
     public void onPlayerLogin(PlayerEvent.PlayerLoggedInEvent event)
     {
         this.removeRecipes((EntityPlayerMP)event.player);
+    }
+    
+    @SubscribeEvent
+    public void onPlayerInteract(PlayerInteractEvent event)
+    {
+        EntityPlayerMP entityPlayerMP;
+        try {
+            entityPlayerMP = (EntityPlayerMP) event.getEntityPlayer();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return;
+        }
+        
+        // if the item in the main hand a society book
+        Item currentItem = entityPlayerMP.getHeldItemMainhand().getItem();
+        if (currentItem.getUnlocalizedName().startsWith("item.society.book_")
+                && !currentItem.getUnlocalizedName().equals("item.society.book_forgetting"))
+        {
+            RecipeBook.getInstance().addRecipesFromBook(entityPlayerMP, (AbstractItem)currentItem);
+        } else if (currentItem.getUnlocalizedName().equals("item.society.book_forgetting")) {
+            RecipeBook recipeBook = RecipeBook.getInstance();
+            recipeBook.removeCraftingRecipes(entityPlayerMP);
+        }
     }
     
     @SubscribeEvent

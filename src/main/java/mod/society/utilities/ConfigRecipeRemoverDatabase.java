@@ -8,31 +8,29 @@ import java.io.File;
 /**
  * @author Martin "Garth" Zander <garth@new-crusader.de>
  */
-public class RecipeBookRemoverDatabase
+public class ConfigRecipeRemoverDatabase extends ConfigAbstract
 {
-    private static RecipeBookRemoverDatabase instance;
-    
-    private Configuration config;
+    private static ConfigRecipeRemoverDatabase instance;
     
     private String player;
     
-    private RecipeBookRemoverDatabase(Configuration config)
+    private ConfigRecipeRemoverDatabase(Configuration config)
     {
-        this.config = config;
+        super(config);
     }
 
-    public static RecipeBookRemoverDatabase init(File configFile)
+    public static ConfigRecipeRemoverDatabase init(File configFile)
     {
         Configuration configuration = new Configuration(configFile);
-        instance = new RecipeBookRemoverDatabase(configuration);
+        instance = new ConfigRecipeRemoverDatabase(configuration);
         
         return instance;
     }
     
-    public static RecipeBookRemoverDatabase player(String player) throws NotLoadedException
+    public static ConfigRecipeRemoverDatabase player(String player) throws NotLoadedException
     {
         if (instance == null) {
-            throw new NotLoadedException("RecipeBookRemoverDatabase have no instance");
+            throw new NotLoadedException("ConfigRecipeRemoverDatabase have no instance");
         }
         
         instance.player = player;
@@ -76,9 +74,6 @@ public class RecipeBookRemoverDatabase
         configuration.removeCategory(configuration.getCategory(player));
     }
     
-    private Configuration getConfig()
-    {
-        this.config.load();
-        return this.config;
-    }
+    protected void configureConfig()
+    {}
 }

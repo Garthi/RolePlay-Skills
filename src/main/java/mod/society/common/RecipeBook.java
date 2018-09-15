@@ -2,10 +2,12 @@ package mod.society.common;
 
 import mod.society.Society;
 import mod.society.common.modules.ForestryItems;
+import mod.society.common.modules.AbstractItem;
 import mod.society.common.modules.ModItems;
+import mod.society.utilities.ConfigBookDatabase;
 import mod.society.utilities.ConfigHelper;
 import mod.society.utilities.NotLoadedException;
-import mod.society.utilities.RecipeBookRemoverDatabase;
+import mod.society.utilities.ConfigRecipeRemoverDatabase;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
@@ -14,7 +16,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.GameType;
 import net.minecraftforge.common.config.Property;
 import net.minecraftforge.fml.common.FMLLog;
@@ -22,6 +23,10 @@ import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import org.apache.logging.log4j.Level;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author Martin "Garth" Zander <garth@new-crusader.de>
@@ -47,12 +52,9 @@ public class RecipeBook
         this.changeGameMode(player);
         
         this.addAllRecipeAdvancements(player);
-        
         this.removeCraftingRecipes(player);
 
         this.addRemoveNote(player);
-
-        player.connection.disconnect(new TextComponentTranslation("society.config.reconnect"));
     }
     
     public void removeCraftingRecipes(EntityPlayerMP player)
@@ -60,22 +62,48 @@ public class RecipeBook
         if (!this.isActive()) {
             return;
         }
+
+        List<IRecipe> removeRecipes = new ArrayList<>();
         
-        net.minecraft.stats.RecipeBook book = new net.minecraft.stats.RecipeBook();
         for (IRecipe irecipe : ForgeRegistries.RECIPES) {
-
-            book.unlock(irecipe);
-            book.markSeen(irecipe);
-
-            if (this.isRecipeAllow(irecipe)) {
-                book.markNew(irecipe);
-            } else {
-                book.lock(irecipe);
+            if (!this.isRecipeAllow(irecipe)) {
+                removeRecipes.add(irecipe);
             }
         }
 
-        // set the new recipe book to player
-        player.getRecipeBook().copyFrom(book);
+        // remove all not needed recipes
+        player.getRecipeBook().remove(removeRecipes, player);
+    }
+    
+    public void addRecipesFromBook(EntityPlayerMP entityPlayerMP, AbstractItem book)
+    {
+        String[] bookRecipes;
+        try {
+            bookRecipes = ConfigBookDatabase.get().getBookRecipes(book.toString());
+        } catch (NotLoadedException e) {
+            e.printStackTrace();
+            return;
+        }
+
+        FMLLog.log.log(Level.INFO, "onItemUse book lumberjack item" + book);
+
+        List<String> recipes = Arrays.asList(bookRecipes);
+
+        List<IRecipe> newRecipes = new ArrayList<>();
+
+        for (IRecipe irecipe : ForgeRegistries.RECIPES) {
+            assert irecipe.getRegistryName() != null;
+            if (recipes.contains(irecipe.getRegistryName().toString())) {
+                newRecipes.add(irecipe);
+            }
+        }
+
+        if (newRecipes.isEmpty()) {
+            return;
+        }
+
+        // add the new recipes to the players RecipeBook
+        entityPlayerMP.getRecipeBook().add(newRecipes, entityPlayerMP);
     }
     
     public void addAllCustomRecipes()
@@ -280,7 +308,7 @@ public class RecipeBook
     private boolean hasRemoveFrom(EntityPlayerMP player)
     {
         try {
-            Property entity = RecipeBookRemoverDatabase.player(player.getName()).get();
+            Property entity = ConfigRecipeRemoverDatabase.player(player.getName()).get();
             if (entity != null) {
                 return entity.getBoolean(false);
             }
@@ -294,7 +322,7 @@ public class RecipeBook
     private boolean addRemoveNote(EntityPlayerMP player)
     {
         try {
-            RecipeBookRemoverDatabase.player(player.getName()).add();
+            ConfigRecipeRemoverDatabase.player(player.getName()).add();
         } catch (NotLoadedException exception) {
             FMLLog.log.log(Level.ERROR, exception.getMessage());
         }
