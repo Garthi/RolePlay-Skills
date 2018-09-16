@@ -16,7 +16,9 @@ import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.CommandEvent;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.ServerChatEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.event.world.WorldEvent;
@@ -130,6 +132,34 @@ public class CommonProxy
             } catch (NotLoadedException e) {
                 e.printStackTrace();
             }
+        }
+    }
+    
+    @SubscribeEvent
+    public void onChatEvent(ServerChatEvent event)
+    {
+        try {
+            if (ConfigHelper.get().isChatDisabled()) {
+                event.setCanceled(true);
+            }
+        } catch (NotLoadedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @SubscribeEvent
+    public void onCommandEvent(CommandEvent event)
+    {
+        try {
+            if (ConfigHelper.get().isChatDisabled()) {
+                if (event.getCommand().getName().equals("me")
+                        || event.getCommand().getName().equals("tell"))
+                {
+                    event.setCanceled(true);
+                }
+            }
+        } catch (NotLoadedException e) {
+            e.printStackTrace();
         }
     }
     

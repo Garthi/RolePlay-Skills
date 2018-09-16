@@ -18,6 +18,7 @@ public class ConfigHelper extends ConfigAbstract
     private static final String CONFIG_VALUE_REMOVE_RECIPES = "remove_recipes";
     private static final String CONFIG_VALUE_MAX_POSSIBLE_OCCUPATIONS = "max_possible_occupations";
     private static final String CONFIG_VALUE_DEFAULT_RECIPES = "default_recipes";
+    private static final String CONFIG_VALUE_DISABLE_CHAT = "disable_chat";
     
     private ConfigHelper(Configuration config)
     {
@@ -67,6 +68,19 @@ public class ConfigHelper extends ConfigAbstract
         return config.getBoolean();
     }
 
+    public boolean isChatDisabled()
+    {
+        Configuration configuration = getConfig();
+
+        if (!configuration.hasKey(CONFIG_CATEGORY_CONFIG, CONFIG_VALUE_DISABLE_CHAT)) {
+            return false;
+        }
+
+        Property config = configuration.get(CONFIG_CATEGORY_CONFIG, CONFIG_VALUE_DISABLE_CHAT, true);
+
+        return config.getBoolean();
+    }
+
     public boolean isItDefaultRecipe(IRecipe recipe)
     {
         Configuration configuration = getConfig();
@@ -99,6 +113,7 @@ public class ConfigHelper extends ConfigAbstract
         configuration.addCustomCategoryComment(CONFIG_CATEGORY_CONFIG, "mod configuration");
         configuration.get(CONFIG_CATEGORY_CONFIG, CONFIG_VALUE_REMOVE_RECIPES, true, "true or false");
         configuration.get(CONFIG_CATEGORY_CONFIG, CONFIG_VALUE_MAX_POSSIBLE_OCCUPATIONS, 1, "as integer");
+        configuration.get(CONFIG_CATEGORY_CONFIG, CONFIG_VALUE_DISABLE_CHAT, true, "true or false");
         
         configuration.addCustomCategoryComment(CONFIG_CATEGORY_RECIPES, "allowed recipes for all players");
         configuration.get(
