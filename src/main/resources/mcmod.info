@@ -1,8 +1,8 @@
 [
 {
-  "modid": "RolePlaySkills",
-  "name": "RolePlay-Skills",
-  "description": "RolePlay-Skills mod.",
+  "modid": "society",
+  "name": "The Society Mod",
+  "description": "The Society Mod",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",

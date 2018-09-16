@@ -1,0 +1,14 @@
+{
+  "type": "forge:ore_shapeless",
+  "group": "minecraft:stonebrick",
+  "ingredients": [
+    {
+      "item": "society:slag_stonebrick_cracked"
+    }
+  ],
+  "result": {
+    "item": "minecraft:stonebrick",
+    "data": 2,
+    "count": 1
+  }
+}

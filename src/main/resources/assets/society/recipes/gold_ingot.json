@@ -1,0 +1,14 @@
+{
+  "type": "forge:ore_shapeless",
+  "group": "minecraft:gold_ingot",
+  "ingredients": [
+    {
+      "item": "society:slag_gold_ingot"
+    }
+  ],
+  "result": {
+    "item": "minecraft:gold_ingot",
+    "data": 0,
+    "count": 1
+  }
+}

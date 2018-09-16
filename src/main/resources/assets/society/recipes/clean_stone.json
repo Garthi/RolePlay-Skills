@@ -1,0 +1,14 @@
+{
+  "type": "forge:ore_shapeless",
+  "group": "minecraft:stone",
+  "ingredients": [
+    {
+      "item": "society:slag_stone"
+    }
+  ],
+  "result": {
+    "item": "minecraft:stone",
+    "data": 0,
+    "count": 1
+  }
+}

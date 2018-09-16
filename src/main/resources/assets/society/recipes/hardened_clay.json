@@ -1,0 +1,13 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "society:slag_hardened_clay"
+    }
+  ],
+  "result": {
+    "item": "minecraft:hardened_clay",
+    "data": 0,
+    "count": 1
+  }
+}

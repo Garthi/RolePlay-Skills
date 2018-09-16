@@ -1,0 +1,14 @@
+{
+  "type": "forge:ore_shapeless",
+  "group": "minecraft:dye_powder_green",
+  "ingredients": [
+    {
+      "item": "society:slag_dye_powder_green"
+    }
+  ],
+  "result": {
+    "item": "minecraft:dye_powder_green",
+    "data": 0,
+    "count": 1
+  }
+}

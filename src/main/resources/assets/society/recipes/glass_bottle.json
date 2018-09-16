@@ -1,0 +1,14 @@
+{
+  "type": "forge:ore_shapeless",
+  "group": "minecraft:glass_bottle",
+  "ingredients": [
+    {
+      "item": "society:glass_ball"
+    }
+  ],
+  "result": {
+    "item": "minecraft:glass_bottle",
+    "data": 0,
+    "count": 1
+  }
+}

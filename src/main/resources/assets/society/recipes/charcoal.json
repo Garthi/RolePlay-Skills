@@ -1,0 +1,15 @@
+{
+  "type": "forge:ore_shapeless",
+  "group": "minecraft:charcoal",
+  "ingredients": [
+    {
+      "item": "society:raw_charcoal"
+    }
+  ],
+  "result": {
+    "item": "minecraft:coal",
+    "data": 1,
+    "count": 4
+  }
+  
+}
