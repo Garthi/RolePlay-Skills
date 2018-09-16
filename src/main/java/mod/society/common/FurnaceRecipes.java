@@ -8,9 +8,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Loader;
-import org.apache.logging.log4j.Level;
 
 import java.util.Iterator;
 import java.util.Map;
@@ -32,16 +30,10 @@ public class FurnaceRecipes
 
     public void removeAllRecipes()
     {
-        ItemStack recipeResult;
         Map<ItemStack,ItemStack> recipes = net.minecraft.item.crafting.FurnaceRecipes.instance().getSmeltingList();
         Iterator<ItemStack> iterator = recipes.keySet().iterator();
         while(iterator.hasNext()) {
-            ItemStack tmpRecipe = iterator.next();
-            recipeResult = recipes.get(tmpRecipe);
-            FMLLog.log.log(
-                    Level.INFO,
-                    "FurnaceRecipes: " + tmpRecipe.getUnlocalizedName() + " -> " + recipeResult.getUnlocalizedName()
-            );
+            iterator.next();
             iterator.remove();
         }
     }
