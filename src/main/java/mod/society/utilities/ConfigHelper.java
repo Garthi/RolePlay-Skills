@@ -16,6 +16,7 @@ public class ConfigHelper extends ConfigAbstract
     private static final String CONFIG_CATEGORY_CONFIG = "all.config";
     private static final String CONFIG_CATEGORY_RECIPES = "all.recipes";
     private static final String CONFIG_VALUE_REMOVE_RECIPES = "remove_recipes";
+    private static final String CONFIG_VALUE_MAX_POSSIBLE_OCCUPATIONS = "max_possible_occupations";
     private static final String CONFIG_VALUE_DEFAULT_RECIPES = "default_recipes";
     
     private ConfigHelper(Configuration config)
@@ -40,6 +41,19 @@ public class ConfigHelper extends ConfigAbstract
         return instance;
     }
 
+    public int getMaxPossibleOccupations()
+    {
+        Configuration configuration = getConfig();
+
+        if (!configuration.hasKey(CONFIG_CATEGORY_CONFIG, CONFIG_VALUE_MAX_POSSIBLE_OCCUPATIONS)) {
+            return 0;
+        }
+
+        Property config = configuration.get(CONFIG_CATEGORY_CONFIG, CONFIG_VALUE_MAX_POSSIBLE_OCCUPATIONS, 0);
+
+        return config.getInt();
+    }
+    
     public boolean isRecipeRemoverActive()
     {
         Configuration configuration = getConfig();
@@ -84,6 +98,7 @@ public class ConfigHelper extends ConfigAbstract
         // add default config
         configuration.addCustomCategoryComment(CONFIG_CATEGORY_CONFIG, "mod configuration");
         configuration.get(CONFIG_CATEGORY_CONFIG, CONFIG_VALUE_REMOVE_RECIPES, true, "true or false");
+        configuration.get(CONFIG_CATEGORY_CONFIG, CONFIG_VALUE_MAX_POSSIBLE_OCCUPATIONS, 1, "as integer");
         
         configuration.addCustomCategoryComment(CONFIG_CATEGORY_RECIPES, "allowed recipes for all players");
         configuration.get(
