@@ -1,0 +1,14 @@
+{
+  "type": "forge:ore_shapeless",
+  "group": "rustic:beeswax",
+  "ingredients": [
+    {
+      "item": "society:slag_beeswax"
+    }
+  ],
+  "result": {
+    "item": "rustic:beeswax",
+    "data": 0,
+    "count": 1
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "minecraft:items/chorus_fruit_popped",
+    "layer1": "society:items/slag_layer_block"
+  }
+}

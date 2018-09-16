@@ -4,6 +4,7 @@ import mod.society.Society;
 import mod.society.common.modules.ForestryItems;
 import mod.society.common.modules.AbstractItem;
 import mod.society.common.modules.ModItems;
+import mod.society.common.modules.RusticItems;
 import mod.society.utilities.ConfigBookDatabase;
 import mod.society.utilities.ConfigHelper;
 import mod.society.utilities.NotLoadedException;
@@ -295,6 +296,18 @@ public class RecipeBook
                 new ItemStack(Blocks.YELLOW_GLAZED_TERRACOTTA),
                 Ingredient.fromItem(ModItems.SLAG_GLAZED_TERRACOTTA_YELLOW)
         );
+        GameRegistry.addShapelessRecipe(
+                new ResourceLocation(Society.ID, "dye_powder_green"),
+                null,
+                new ItemStack(Items.DYE, 1, 2),
+                Ingredient.fromItem(ModItems.SLAG_DYE_POWDER_GREEN)
+        );
+        GameRegistry.addShapelessRecipe(
+                new ResourceLocation(Society.ID, "dye_powder_green"),
+                null,
+                new ItemStack(Items.CHORUS_FRUIT_POPPED),
+                Ingredient.fromItem(ModItems.SLAG_CHORUS_FRUIT_POPPED)
+        );
 
         if (Loader.isModLoaded("forestry")) {
             GameRegistry.addShapelessRecipe(
@@ -308,6 +321,21 @@ public class RecipeBook
                     null,
                     new ItemStack(ForestryItems.forestryCopperIngot()),
                     Ingredient.fromItem(ModItems.SLAG_COPPER_INGOT)
+            );
+        }
+
+        if (Loader.isModLoaded("rustic")) {
+            GameRegistry.addShapelessRecipe(
+                    new ResourceLocation(Society.ID, "tallow"),
+                    null,
+                    new ItemStack(RusticItems.rusticTallow()),
+                    Ingredient.fromItem(ModItems.SLAG_TALLOW)
+            );
+            GameRegistry.addShapelessRecipe(
+                    new ResourceLocation(Society.ID, "beeswax"),
+                    null,
+                    new ItemStack(RusticItems.rusticBeeswax()),
+                    Ingredient.fromItem(ModItems.SLAG_BEESWAX)
             );
         }
     }

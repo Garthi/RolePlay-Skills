@@ -1,0 +1,14 @@
+{
+  "type": "forge:ore_shapeless",
+  "group": "minecraft:chorus_fruit_popped",
+  "ingredients": [
+    {
+      "item": "society:slag_chorus_fruit_popped"
+    }
+  ],
+  "result": {
+    "item": "minecraft:chorus_fruit_popped",
+    "data": 0,
+    "count": 1
+  }
+}

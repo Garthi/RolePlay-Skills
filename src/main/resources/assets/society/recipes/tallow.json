@@ -1,0 +1,14 @@
+{
+  "type": "forge:ore_shapeless",
+  "group": "rustic:tallow",
+  "ingredients": [
+    {
+      "item": "society:slag_tallow"
+    }
+  ],
+  "result": {
+    "item": "rustic:tallow",
+    "data": 0,
+    "count": 1
+  }
+}

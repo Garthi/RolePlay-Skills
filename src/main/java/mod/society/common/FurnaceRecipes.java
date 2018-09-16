@@ -49,8 +49,9 @@ public class FurnaceRecipes
                 new ItemStack(Blocks.SPONGE, 1, 0),
                 0.15F
         );
-        furnaceRecipes.addSmelting(Items.CHORUS_FRUIT, new ItemStack(Items.CHORUS_FRUIT_POPPED), 0.1F);
         furnaceRecipes.addSmelting(Items.CLAY_BALL, new ItemStack(Items.BRICK), 0.3F);
+        furnaceRecipes.addSmeltingRecipeForBlock(Blocks.CACTUS, new ItemStack(ModItems.SLAG_DYE_POWDER_GREEN), 0.2F);
+        furnaceRecipes.addSmelting(Items.CHORUS_FRUIT, new ItemStack(ModItems.SLAG_CHORUS_FRUIT_POPPED), 0.1F);
 
         // custom recipes
         furnaceRecipes.addSmeltingRecipeForBlock(
@@ -155,6 +156,16 @@ public class FurnaceRecipes
             furnaceRecipes.addSmeltingRecipeForBlock(
                     RusticItems.rusticLogs(),
                     new ItemStack(ModItems.RAW_CHARCOAL),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipe(
+                    new ItemStack(Items.ROTTEN_FLESH),
+                    new ItemStack(ModItems.SLAG_TALLOW),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipe(
+                    new ItemStack(RusticItems.rusticHoneycomb()),
+                    new ItemStack(ModItems.SLAG_BEESWAX),
                     0.1F
             );
         }
@@ -306,6 +317,11 @@ public class FurnaceRecipes
             furnaceRecipes.addSmeltingRecipe(
                     new ItemStack(BiomesoplentyItems.biomesoplentyWhiteSand(), 1, 0),
                     new ItemStack(ModItems.GLASS_BALL),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipe(
+                    new ItemStack(BiomesoplentyItems.biomesoplentyPlant1(), 1, 6),
+                    new ItemStack(ModItems.SLAG_DYE_POWDER_GREEN),
                     0.1F
             );
         }
