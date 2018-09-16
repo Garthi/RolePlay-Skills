@@ -10,7 +10,9 @@ import java.io.File;
  */
 public class ConfigBookDatabase extends ConfigAbstract
 {
-    private static final String CONFIG_CATEGORY_BOOKS = "books";
+    private static final String CONFIG_CATEGORY_BOOKS = "book.recipes";
+    private static final String CONFIG_CATEGORY_USAGES = "book.usages.";
+    private static final String CONFIG_VALUE_DEFAULT_BOOKS = "books";
     
     private static ConfigBookDatabase instance;
 
@@ -40,13 +42,58 @@ public class ConfigBookDatabase extends ConfigAbstract
     {
         Configuration configuration = getConfig();
         
-        if (!configuration.hasKey(CONFIG_CATEGORY_BOOKS, "book_lumberjack")) {
+        if (!configuration.hasKey(CONFIG_CATEGORY_BOOKS, bookName)) {
             return new String[]{};
         }
 
         Property config = configuration.get(CONFIG_CATEGORY_BOOKS, bookName, new String[]{});
         
         return config.getStringList();
+    }
+
+    public void addBookUsage(String playerName, String book)
+    {
+        Configuration configuration = getConfig();
+
+        configuration.addCustomCategoryComment(CONFIG_CATEGORY_USAGES + playerName, "");
+        Property config = configuration.get(
+                CONFIG_CATEGORY_USAGES + playerName, CONFIG_VALUE_DEFAULT_BOOKS, new String[]{}
+        );
+        
+        String[] newArray = new String[config.getStringList().length + 1];
+        System.arraycopy(config.getStringList(), 0, newArray, 0, config.getStringList().length);
+        
+        newArray[newArray.length - 1] = book;
+        
+        config.setValues(newArray);
+
+        configuration.save();
+    }
+
+    public String[] getBookUsage(String playerName)
+    {
+        Configuration configuration = getConfig();
+
+        if (!configuration.hasKey(CONFIG_CATEGORY_USAGES + playerName, CONFIG_VALUE_DEFAULT_BOOKS)) {
+            return new String[]{};
+        }
+        
+        Property config = configuration.get(
+                CONFIG_CATEGORY_USAGES + playerName, CONFIG_VALUE_DEFAULT_BOOKS, new String[]{}
+        );
+        
+        return config.getStringList();
+    }
+    
+    public void removeBookUsage(String playerName)
+    {
+        Configuration configuration = getConfig();
+        if (!configuration.hasCategory(CONFIG_CATEGORY_USAGES + playerName)) {
+            return;
+        }
+
+        configuration.removeCategory(configuration.getCategory(CONFIG_CATEGORY_USAGES + playerName));
+        configuration.save();
     }
 
     protected void configureConfig()
@@ -58,12 +105,36 @@ public class ConfigBookDatabase extends ConfigAbstract
                 CONFIG_CATEGORY_BOOKS,
                 "book_lumberjack",
                 new String[] {
-                        "minecraft:melon_block"
+                        "minecraft:melon_block",
+                        "rustic:gargoyle",
+                        "rustic:condenser"
                 },
                 "Lumberjack book"
         );
-        // TODO add default config
+        configuration.get(
+                CONFIG_CATEGORY_BOOKS,
+                "book_barkeeper",
+                new String[] {
+                        "minecraft:melon_block",
+                        "rustic:candle",
+                        "rustic:crop_stake"
+                },
+                "Lumberjack book"
+        );
+        
+        // TODO more default config
 
+        configuration.addCustomCategoryComment(CONFIG_CATEGORY_USAGES, "Players use the books");
+        configuration.get(
+                CONFIG_CATEGORY_USAGES + "Player1",
+                CONFIG_VALUE_DEFAULT_BOOKS,
+                new String[] {
+                        "book_lumberjack",
+                        "book_barkeeper"
+                },
+                "Player1 uses these books"
+        );
+        
         configuration.save();
     }
 }

@@ -85,6 +85,26 @@ public class RecipeBook
             return false;
         }
 
+        int maxPossibleOccupations;
+        try {
+            maxPossibleOccupations = ConfigHelper.get().getMaxPossibleOccupations();
+        } catch (NotLoadedException e) {
+            e.printStackTrace();
+            return false;
+        }
+
+        String[] bookUsages;
+        try {
+            bookUsages = ConfigBookDatabase.get().getBookUsage(entityPlayerMP.getName());
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+        
+        if (bookUsages.length >= maxPossibleOccupations) {
+            return false;
+        }
+
         List<String> recipes = Arrays.asList(bookRecipes);
         List<IRecipe> newRecipes = new ArrayList<>();
 
@@ -101,6 +121,12 @@ public class RecipeBook
 
         // add the new recipes to the players RecipeBook
         entityPlayerMP.getRecipeBook().add(newRecipes, entityPlayerMP);
+
+        try {
+            ConfigBookDatabase.get().addBookUsage(entityPlayerMP.getName(), book.toString());
+        } catch (NotLoadedException e) {
+            e.printStackTrace();
+        }
         
         return true;
     }

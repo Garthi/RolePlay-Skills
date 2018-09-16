@@ -8,6 +8,7 @@ import mod.society.common.modules.ModItems;
 import mod.society.utilities.ConfigBookDatabase;
 import mod.society.utilities.ConfigHelper;
 import mod.society.utilities.ConfigRecipeRemoverDatabase;
+import mod.society.utilities.NotLoadedException;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -123,6 +124,12 @@ public class CommonProxy
 
             // remove book from main hand
             entityPlayerMP.inventory.getCurrentItem().setCount(0);
+
+            try {
+                ConfigBookDatabase.get().removeBookUsage(entityPlayerMP.getName());
+            } catch (NotLoadedException e) {
+                e.printStackTrace();
+            }
         }
     }
     
