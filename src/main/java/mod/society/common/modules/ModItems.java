@@ -38,6 +38,7 @@ public class ModItems
     public static ItemSmelting SLAG_TALLOW;
     public static ItemSmelting SLAG_DYE_POWDER_GREEN;
     public static ItemSmelting SLAG_CHORUS_FRUIT_POPPED;
+    public static ItemSmelting SLAG_CLAY_BRICK;
     public static ItemBook BOOK_FORGETTING;
     public static ItemBook BOOK_LUMBERJACK;
     public static ItemBook BOOK_BLACKSMITH;
@@ -94,8 +95,9 @@ public class ModItems
         SLAG_GLAZED_TERRACOTTA_YELLOW = new ItemSmelting("slag_glazed_terracotta_yellow");
         SLAG_BEESWAX = new ItemSmelting("slag_beeswax");
         SLAG_TALLOW = new ItemSmelting("slag_tallow");
-        SLAG_DYE_POWDER_GREEN = new ItemSmelting("slag_dry_powder_green");
+        SLAG_DYE_POWDER_GREEN = new ItemSmelting("slag_dye_powder_green");
         SLAG_CHORUS_FRUIT_POPPED = new ItemSmelting("slag_chorus_fruit_popped");
+        SLAG_CLAY_BRICK = new ItemSmelting("slag_clay_brick");
         
         BOOK_FORGETTING = new ItemBook("forgetting");
         BOOK_LUMBERJACK = new ItemBook("lumberjack");
@@ -157,6 +159,7 @@ public class ModItems
         SLAG_TALLOW.initModel();
         SLAG_DYE_POWDER_GREEN.initModel();
         SLAG_CHORUS_FRUIT_POPPED.initModel();
+        SLAG_CLAY_BRICK.initModel();
         
         BOOK_FORGETTING.initModel();
         BOOK_LUMBERJACK.initModel();

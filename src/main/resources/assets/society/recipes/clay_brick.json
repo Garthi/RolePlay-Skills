@@ -1,0 +1,14 @@
+{
+  "type": "forge:ore_shapeless",
+  "group": "minecraft:brick",
+  "ingredients": [
+    {
+      "item": "society:slag_clay_brick"
+    }
+  ],
+  "result": {
+    "item": "minecraft:brick",
+    "data": 0,
+    "count": 1
+  }
+}

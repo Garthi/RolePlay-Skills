@@ -49,7 +49,7 @@ public class FurnaceRecipes
                 new ItemStack(Blocks.SPONGE, 1, 0),
                 0.15F
         );
-        furnaceRecipes.addSmelting(Items.CLAY_BALL, new ItemStack(Items.BRICK), 0.3F);
+        furnaceRecipes.addSmelting(Items.CLAY_BALL, new ItemStack(ModItems.SLAG_CLAY_BRICK), 0.3F);
         furnaceRecipes.addSmeltingRecipeForBlock(Blocks.CACTUS, new ItemStack(ModItems.SLAG_DYE_POWDER_GREEN), 0.2F);
         furnaceRecipes.addSmelting(Items.CHORUS_FRUIT, new ItemStack(ModItems.SLAG_CHORUS_FRUIT_POPPED), 0.1F);
 
