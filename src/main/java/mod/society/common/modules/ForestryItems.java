@@ -53,4 +53,12 @@ public class ForestryItems
     {
         return Item.REGISTRY.getObject(new ResourceLocation("forestry:ingot_copper"));
     }
+    public static Item forestryPeat()
+    {
+        return Item.REGISTRY.getObject(new ResourceLocation("forestry:peat"));
+    }
+    public static Item forestryAsh()
+    {
+        return Item.REGISTRY.getObject(new ResourceLocation("forestry:ash"));
+    }
 }

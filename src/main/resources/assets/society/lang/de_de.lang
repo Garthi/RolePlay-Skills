@@ -12,6 +12,12 @@ item.society.slag_iron_ingot.name=Schlacke überzogener Eisenbarren
 item.society.slag_stonebrick_cracked.name=Schlacke überzogene Rissige Steinziegel
 item.society.slag_netherbrick.name=Schlacke überzogener Netherziegel
 item.society.glass_ball.name=Glasball
+item.society.peat_ash.name=Torfascheziegel
+item.society.slag_mud_brick.name=Schlacke überzogener Schlammziegel
+item.society.slag_tallow.name=Schlacke überzogener Talg
+item.society.slag_beeswax.name=Schlacke überzogener Bienenwachs
+item.society.slag_clay_brick.name=Schlacke überzogener Lehmziegel
+item.society.slag_chorus_fruit_popped.name=Schlacke überzogener Chorus Obst geknallt
 
 item.society.slag_hardened_clay.name=Schlacke überzogene Keramik
 item.society.slag_glazed_terracotta_black.name=Schlacke überzogene Schwarze glasierte Keramik

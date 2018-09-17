@@ -221,6 +221,11 @@ public class FurnaceRecipes
                     new ItemStack(ModItems.SLAG_COPPER_INGOT),
                     0.1F
             );
+            furnaceRecipes.addSmeltingRecipe(
+                    new ItemStack(ForestryItems.forestryPeat()),
+                    new ItemStack(ModItems.PEAT_ASH),
+                    0.1F
+            );
         }
         
         if (Loader.isModLoaded("biomesoplenty")) {
@@ -322,6 +327,11 @@ public class FurnaceRecipes
             furnaceRecipes.addSmeltingRecipe(
                     new ItemStack(BiomesoplentyItems.biomesoplentyPlant1(), 1, 6),
                     new ItemStack(ModItems.SLAG_DYE_POWDER_GREEN),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipe(
+                    new ItemStack(BiomesoplentyItems.biomesoplentyMudBall()),
+                    new ItemStack(ModItems.SLAG_MUD_BRICK),
                     0.1F
             );
         }

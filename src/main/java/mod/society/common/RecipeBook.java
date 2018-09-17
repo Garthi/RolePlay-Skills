@@ -1,10 +1,7 @@
 package mod.society.common;
 
 import mod.society.Society;
-import mod.society.common.modules.ForestryItems;
-import mod.society.common.modules.AbstractItem;
-import mod.society.common.modules.ModItems;
-import mod.society.common.modules.RusticItems;
+import mod.society.common.modules.*;
 import mod.society.utilities.ConfigBookDatabase;
 import mod.society.utilities.ConfigHelper;
 import mod.society.utilities.NotLoadedException;
@@ -322,6 +319,12 @@ public class RecipeBook
                     new ItemStack(ForestryItems.forestryCopperIngot()),
                     Ingredient.fromItem(ModItems.SLAG_COPPER_INGOT)
             );
+            GameRegistry.addShapelessRecipe(
+                    new ResourceLocation(Society.ID, "ash"),
+                    null,
+                    new ItemStack(ForestryItems.forestryAsh()),
+                    Ingredient.fromItem(ModItems.PEAT_ASH)
+            );
         }
 
         if (Loader.isModLoaded("rustic")) {
@@ -336,6 +339,15 @@ public class RecipeBook
                     null,
                     new ItemStack(RusticItems.rusticBeeswax()),
                     Ingredient.fromItem(ModItems.SLAG_BEESWAX)
+            );
+        }
+
+        if (Loader.isModLoaded("biomesoplenty")) {
+            GameRegistry.addShapelessRecipe(
+                    new ResourceLocation(Society.ID, "mud_brick"),
+                    null,
+                    new ItemStack(BiomesoplentyItems.biomesoplentyMudBrick()),
+                    Ingredient.fromItem(ModItems.SLAG_MUD_BRICK)
             );
         }
     }

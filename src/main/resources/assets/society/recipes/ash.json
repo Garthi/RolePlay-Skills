@@ -1,0 +1,14 @@
+{
+  "type": "forge:ore_shapeless",
+  "group": "forestry:ash",
+  "ingredients": [
+    {
+      "item": "society:peat_ash"
+    }
+  ],
+  "result": {
+    "item": "forestry:ash",
+    "data": 0,
+    "count": 1
+  }
+}

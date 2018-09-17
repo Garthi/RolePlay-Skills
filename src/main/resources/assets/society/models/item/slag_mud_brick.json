@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "biomesoplenty:items/mud_brick",
+    "layer1": "society:items/slag_layer_block"
+  }
+}

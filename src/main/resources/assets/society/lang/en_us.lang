@@ -12,6 +12,12 @@ item.society.slag_iron_ingot.name=Slag Iron Ingot
 item.society.slag_stonebrick_cracked.name=Slag Cracked Stone Bricks
 item.society.slag_netherbrick.name=Slag Nether Brick
 item.society.glass_ball.name=Glass Ball
+item.society.peat_ash.name=Peat Ash
+item.society.slag_mud_brick.name=Slag Mud Brick
+item.society.slag_tallow.name=Slag Tallow
+item.society.slag_beeswax.name=Slag Beeswax
+item.society.slag_clay_brick.name=Slag Clay Brick
+item.society.slag_chorus_fruit_popped.name=Slag Chorus Fruit Popped
 
 item.society.slag_hardened_clay.name=Slag Terracotta
 item.society.slag_glazed_terracotta_black.name=Slag Black Glazed Terracotta

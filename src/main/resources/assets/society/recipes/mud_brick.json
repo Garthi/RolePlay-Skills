@@ -1,0 +1,14 @@
+{
+  "type": "forge:ore_shapeless",
+  "group": "biomesoplenty:mud_brick",
+  "ingredients": [
+    {
+      "item": "society:slag_mud_brick"
+    }
+  ],
+  "result": {
+    "item": "biomesoplenty:mud_brick",
+    "data": 0,
+    "count": 1
+  }
+}
