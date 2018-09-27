@@ -1,9 +1,6 @@
 package mod.society.common;
 
-import mod.society.common.modules.BiomesoplentyItems;
-import mod.society.common.modules.ForestryItems;
-import mod.society.common.modules.ModItems;
-import mod.society.common.modules.RusticItems;
+import mod.society.common.modules.*;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.EnumDyeColor;
@@ -332,6 +329,59 @@ public class FurnaceRecipes
             furnaceRecipes.addSmeltingRecipe(
                     new ItemStack(BiomesoplentyItems.biomesoplentyMudBall()),
                     new ItemStack(ModItems.SLAG_MUD_BRICK),
+                    0.1F
+            );
+        }
+
+        if (Loader.isModLoaded("ceramics")) {
+            furnaceRecipes.addSmeltingRecipe(
+                    new ItemStack(CeramicsItems.clayUnfired(), 1, 0),
+                    new ItemStack(CeramicsItems.clayBucket()),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipe(
+                    new ItemStack(CeramicsItems.clayUnfired(), 1, 1),
+                    new ItemStack(CeramicsItems.clayShears()),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipe(
+                    new ItemStack(CeramicsItems.clayUnfired(), 1, 3),
+                    new ItemStack(CeramicsItems.clayBarrel(), 1, 1),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipe(
+                    new ItemStack(CeramicsItems.clayUnfired(), 1, 4),
+                    new ItemStack(CeramicsItems.clayUnfired(), 1, 5),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipe(
+                    new ItemStack(CeramicsItems.clayBarrelUnfired(), 1, 0),
+                    new ItemStack(CeramicsItems.clayBarrel(), 1, 0),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipe(
+                    new ItemStack(CeramicsItems.clayBarrelUnfired(), 1, 1),
+                    new ItemStack(CeramicsItems.clayBarrel(), 1, 1),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipe(
+                    new ItemStack(CeramicsItems.clayBarrelUnfired(), 1, 2),
+                    new ItemStack(CeramicsItems.clayPorcelainBarrel(), 1, 0),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipe(
+                    new ItemStack(CeramicsItems.clayBarrelUnfired(), 1, 3),
+                    new ItemStack(CeramicsItems.clayPorcelainBarrelExtension(), 1, 0),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipe(
+                    new ItemStack(CeramicsItems.clayUnfired(), 1, 8),
+                    new ItemStack(CeramicsItems.clayUnfired(), 1, 9),
+                    0.1F
+            );
+            furnaceRecipes.addSmeltingRecipeForBlock(
+                    CeramicsItems.clayPorcelainUnfired(),
+                    new ItemStack(CeramicsItems.clayPorcelain(), 1, 0),
                     0.1F
             );
         }
