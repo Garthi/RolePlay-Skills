@@ -101,28 +101,151 @@ public class ConfigBookDatabase extends ConfigAbstract
         Configuration configuration = getConfig();
         
         configuration.addCustomCategoryComment(CONFIG_CATEGORY_BOOKS, "books with the configured recipes");
+
         configuration.get(
                 CONFIG_CATEGORY_BOOKS,
-                "book_lumberjack",
-                new String[] {
-                        "minecraft:melon_block",
-                        "rustic:gargoyle",
-                        "rustic:condenser"
-                },
-                "Lumberjack book"
+                DefaultBookConfigHelper.ALCHEMIST.getId(),
+                DefaultBookConfigHelper.ALCHEMIST.getSkills(),
+                DefaultBookConfigHelper.ALCHEMIST.getComment()
         );
         configuration.get(
                 CONFIG_CATEGORY_BOOKS,
-                "book_barkeeper",
-                new String[] {
-                        "minecraft:melon_block",
-                        "rustic:candle",
-                        "rustic:crop_stake"
-                },
-                "Lumberjack book"
+                DefaultBookConfigHelper.ANIMAL_BREEDER.getId(),
+                DefaultBookConfigHelper.ANIMAL_BREEDER.getSkills(),
+                DefaultBookConfigHelper.ANIMAL_BREEDER.getComment()
         );
-        
-        // TODO more default config
+        configuration.get(
+                CONFIG_CATEGORY_BOOKS,
+                DefaultBookConfigHelper.BAKER.getId(),
+                DefaultBookConfigHelper.BAKER.getSkills(),
+                DefaultBookConfigHelper.BAKER.getComment()
+        );
+        configuration.get(
+                CONFIG_CATEGORY_BOOKS,
+                DefaultBookConfigHelper.BARKEEPER.getId(),
+                DefaultBookConfigHelper.BARKEEPER.getSkills(),
+                DefaultBookConfigHelper.BARKEEPER.getComment()
+        );
+        configuration.get(
+                CONFIG_CATEGORY_BOOKS,
+                DefaultBookConfigHelper.BLACKSMITH.getId(),
+                DefaultBookConfigHelper.BLACKSMITH.getSkills(),
+                DefaultBookConfigHelper.BLACKSMITH.getComment()
+        );
+        configuration.get(
+                CONFIG_CATEGORY_BOOKS,
+                DefaultBookConfigHelper.BURNER.getId(),
+                DefaultBookConfigHelper.BURNER.getSkills(),
+                DefaultBookConfigHelper.BURNER.getComment()
+        );
+        configuration.get(
+                CONFIG_CATEGORY_BOOKS,
+                DefaultBookConfigHelper.BUTCHER.getId(),
+                DefaultBookConfigHelper.BUTCHER.getSkills(),
+                DefaultBookConfigHelper.BUTCHER.getComment()
+        );
+        configuration.get(
+                CONFIG_CATEGORY_BOOKS,
+                DefaultBookConfigHelper.CARPENTER.getId(),
+                DefaultBookConfigHelper.CARPENTER.getSkills(),
+                DefaultBookConfigHelper.CARPENTER.getComment()
+        );
+        configuration.get(
+                CONFIG_CATEGORY_BOOKS,
+                DefaultBookConfigHelper.CONFECTIONER.getId(),
+                DefaultBookConfigHelper.CONFECTIONER.getSkills(),
+                DefaultBookConfigHelper.CONFECTIONER.getComment()
+        );
+        configuration.get(
+                CONFIG_CATEGORY_BOOKS,
+                DefaultBookConfigHelper.COOK.getId(),
+                DefaultBookConfigHelper.COOK.getSkills(),
+                DefaultBookConfigHelper.COOK.getComment()
+        );
+        configuration.get(
+                CONFIG_CATEGORY_BOOKS,
+                DefaultBookConfigHelper.DIGGER.getId(),
+                DefaultBookConfigHelper.DIGGER.getSkills(),
+                DefaultBookConfigHelper.DIGGER.getComment()
+        );
+        configuration.get(
+                CONFIG_CATEGORY_BOOKS,
+                DefaultBookConfigHelper.FISH_COOK.getId(),
+                DefaultBookConfigHelper.FISH_COOK.getSkills(),
+                DefaultBookConfigHelper.FISH_COOK.getComment()
+        );
+        configuration.get(
+                CONFIG_CATEGORY_BOOKS,
+                DefaultBookConfigHelper.FISHER.getId(),
+                DefaultBookConfigHelper.FISHER.getSkills(),
+                DefaultBookConfigHelper.FISHER.getComment()
+        );
+        configuration.get(
+                CONFIG_CATEGORY_BOOKS,
+                DefaultBookConfigHelper.FARMER.getId(),
+                DefaultBookConfigHelper.FARMER.getSkills(),
+                DefaultBookConfigHelper.FARMER.getComment()
+        );
+        configuration.get(
+                CONFIG_CATEGORY_BOOKS,
+                DefaultBookConfigHelper.GLAZIER.getId(),
+                DefaultBookConfigHelper.GLAZIER.getSkills(),
+                DefaultBookConfigHelper.GLAZIER.getComment()
+        );
+        configuration.get(
+                CONFIG_CATEGORY_BOOKS,
+                DefaultBookConfigHelper.HEALER.getId(),
+                DefaultBookConfigHelper.HEALER.getSkills(),
+                DefaultBookConfigHelper.HEALER.getComment()
+        );
+        configuration.get(
+                CONFIG_CATEGORY_BOOKS,
+                DefaultBookConfigHelper.ICE_CREAM_MAKER.getId(),
+                DefaultBookConfigHelper.ICE_CREAM_MAKER.getSkills(),
+                DefaultBookConfigHelper.ICE_CREAM_MAKER.getComment()
+        );
+        configuration.get(
+                CONFIG_CATEGORY_BOOKS,
+                DefaultBookConfigHelper.LIBRARIAN.getId(),
+                DefaultBookConfigHelper.LIBRARIAN.getSkills(),
+                DefaultBookConfigHelper.LIBRARIAN.getComment()
+        );
+        configuration.get(
+                CONFIG_CATEGORY_BOOKS,
+                DefaultBookConfigHelper.LUMBERJACK.getId(),
+                DefaultBookConfigHelper.LUMBERJACK.getSkills(),
+                DefaultBookConfigHelper.LUMBERJACK.getComment()
+        );
+        configuration.get(
+                CONFIG_CATEGORY_BOOKS,
+                DefaultBookConfigHelper.PLANT_BREEDER.getId(),
+                DefaultBookConfigHelper.PLANT_BREEDER.getSkills(),
+                DefaultBookConfigHelper.PLANT_BREEDER.getComment()
+        );
+        configuration.get(
+                CONFIG_CATEGORY_BOOKS,
+                DefaultBookConfigHelper.STONEMASON.getId(),
+                DefaultBookConfigHelper.STONEMASON.getSkills(),
+                DefaultBookConfigHelper.STONEMASON.getComment()
+        );
+        configuration.get(
+                CONFIG_CATEGORY_BOOKS,
+                DefaultBookConfigHelper.TREE_REFINER.getId(),
+                DefaultBookConfigHelper.TREE_REFINER.getSkills(),
+                DefaultBookConfigHelper.TREE_REFINER.getComment()
+        );
+        configuration.get(
+                CONFIG_CATEGORY_BOOKS,
+                DefaultBookConfigHelper.TAILOR.getId(),
+                DefaultBookConfigHelper.TAILOR.getSkills(),
+                DefaultBookConfigHelper.TAILOR.getComment()
+        );
+        configuration.get(
+                CONFIG_CATEGORY_BOOKS,
+                DefaultBookConfigHelper.TOOLMAKER.getId(),
+                DefaultBookConfigHelper.TOOLMAKER.getSkills(),
+                DefaultBookConfigHelper.TOOLMAKER.getComment()
+        );
 
         configuration.addCustomCategoryComment(CONFIG_CATEGORY_USAGES, "Players use the books");
         configuration.get(
