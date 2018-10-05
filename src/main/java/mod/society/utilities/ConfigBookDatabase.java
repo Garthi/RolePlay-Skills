@@ -252,6 +252,12 @@ public class ConfigBookDatabase extends ConfigAbstract
                 DefaultBookConfigHelper.SOUP_COOK.getSkills(),
                 DefaultBookConfigHelper.SOUP_COOK.getComment()
         );
+        configuration.get(
+                CONFIG_CATEGORY_BOOKS,
+                DefaultBookConfigHelper.DYER.getId(),
+                DefaultBookConfigHelper.DYER.getSkills(),
+                DefaultBookConfigHelper.DYER.getComment()
+        );
 
         configuration.addCustomCategoryComment(CONFIG_CATEGORY_USAGES, "Players use the books");
         configuration.get(
