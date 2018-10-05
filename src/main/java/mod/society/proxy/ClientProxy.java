@@ -272,5 +272,13 @@ public class ClientProxy extends CommonProxy
             BookModelDyer customModel = new BookModelDyer(existingModel);
             event.getModelRegistry().putObject(BookModelDyer.modelResourceLocation, customModel);
         }
+
+        object = event.getModelRegistry().getObject(BookModelElectrician.modelResourceLocation);
+        if (object instanceof IBakedModel) {
+            IBakedModel existingModel = (IBakedModel) object;
+
+            BookModelElectrician customModel = new BookModelElectrician(existingModel);
+            event.getModelRegistry().putObject(BookModelElectrician.modelResourceLocation, customModel);
+        }
     }
 }

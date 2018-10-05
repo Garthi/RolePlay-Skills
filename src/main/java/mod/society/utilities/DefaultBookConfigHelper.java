@@ -2343,6 +2343,33 @@ public enum DefaultBookConfigHelper
                     "props:decobench_dye"
             },
             "Dyer book"
+    ),
+    ELECTRICIAN(
+            "book_electrician",
+            new String[]{
+                    "minecraft:comparator",
+                    "minecraft:daylight_detector",
+                    "minecraft:detector_rail",
+                    "minecraft:dispenser",
+                    "minecraft:dropper",
+                    "minecraft:heavy_weighted_pressure_plate",
+                    "minecraft:jukebox",
+                    "minecraft:lever",
+                    "minecraft:light_weighted_pressure_plate",
+                    "minecraft:noteblock",
+                    "minecraft:observer",
+                    "minecraft:piston",
+                    "minecraft:redstone_lamp",
+                    "minecraft:redstone_torch",
+                    "minecraft:repeater",
+                    "minecraft:sticky_piston",
+                    "minecraft:stone_pressure_plate",
+                    "minecraft:trapped_chest",
+                    "minecraft:wooden_pressure_plate",
+                    "minecraft:activator_rail",
+                    "minecraft:golden_rail"
+            },
+            "Electrician book"
     );
     
     private String id;

@@ -68,6 +68,7 @@ public class ModItems
     public static ItemBook BOOK_TOOLMAKER;
     public static ItemBook BOOK_SOUP_COOK;
     public static ItemBook BOOK_DYER;
+    public static ItemBook BOOK_ELECTRICIAN;
     
     public static void init()
     {
@@ -132,6 +133,7 @@ public class ModItems
         BOOK_TOOLMAKER = new ItemBook("toolmaker");
         BOOK_SOUP_COOK = new ItemBook("soup_cook");
         BOOK_DYER = new ItemBook("dyer");
+        BOOK_ELECTRICIAN = new ItemBook("electrician");
     }
     
     @SideOnly(Side.CLIENT)
@@ -198,5 +200,6 @@ public class ModItems
         BOOK_TOOLMAKER.initModel();
         BOOK_SOUP_COOK.initModel();
         BOOK_DYER.initModel();
+        BOOK_ELECTRICIAN.initModel();
     }
 }

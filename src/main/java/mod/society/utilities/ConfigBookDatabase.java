@@ -258,6 +258,12 @@ public class ConfigBookDatabase extends ConfigAbstract
                 DefaultBookConfigHelper.DYER.getSkills(),
                 DefaultBookConfigHelper.DYER.getComment()
         );
+        configuration.get(
+                CONFIG_CATEGORY_BOOKS,
+                DefaultBookConfigHelper.ELECTRICIAN.getId(),
+                DefaultBookConfigHelper.ELECTRICIAN.getSkills(),
+                DefaultBookConfigHelper.ELECTRICIAN.getComment()
+        );
 
         configuration.addCustomCategoryComment(CONFIG_CATEGORY_USAGES, "Players use the books");
         configuration.get(
