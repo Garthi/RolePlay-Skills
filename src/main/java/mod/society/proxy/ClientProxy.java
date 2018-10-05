@@ -21,6 +21,7 @@ import org.apache.logging.log4j.Level;
  * @author Martin "Garth" Zander <garth@new-crusader.de>
  */
 
+@SideOnly(Side.CLIENT)
 @Mod.EventBusSubscriber(Side.CLIENT)
 public class ClientProxy extends CommonProxy
 {
@@ -254,6 +255,14 @@ public class ClientProxy extends CommonProxy
 
             BookModelToolmaker customModel = new BookModelToolmaker(existingModel);
             event.getModelRegistry().putObject(BookModelToolmaker.modelResourceLocation, customModel);
+        }
+
+        object = event.getModelRegistry().getObject(BookModelSoupCook.modelResourceLocation);
+        if (object instanceof IBakedModel) {
+            IBakedModel existingModel = (IBakedModel) object;
+
+            BookModelSoupCook customModel = new BookModelSoupCook(existingModel);
+            event.getModelRegistry().putObject(BookModelSoupCook.modelResourceLocation, customModel);
         }
     }
 }

@@ -66,6 +66,7 @@ public class ModItems
     public static ItemBook BOOK_STONEMASON;
     public static ItemBook BOOK_TAILOR;
     public static ItemBook BOOK_TOOLMAKER;
+    public static ItemBook BOOK_SOUP_COOK;
     
     public static void init()
     {
@@ -128,6 +129,7 @@ public class ModItems
         BOOK_STONEMASON = new ItemBook("stonemason");
         BOOK_TAILOR = new ItemBook("tailor");
         BOOK_TOOLMAKER = new ItemBook("toolmaker");
+        BOOK_SOUP_COOK = new ItemBook("soup_cook");
     }
     
     @SideOnly(Side.CLIENT)
@@ -192,5 +194,6 @@ public class ModItems
         BOOK_STONEMASON.initModel();
         BOOK_TAILOR.initModel();
         BOOK_TOOLMAKER.initModel();
+        BOOK_SOUP_COOK.initModel();
     }
 }
