@@ -18,7 +18,7 @@ public class Society
 {
     public static final String ID = "society";
     public static final String NAME = "The Society Mod";
-    public static final String VERSION = "0.1";
+    public static final String VERSION = "0.2";
 
     /** Commands **/
     private static CommandBase RECIPES_RESET_COMMAND = new RecipesResetCommand();
