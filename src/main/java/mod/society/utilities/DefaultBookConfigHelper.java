@@ -1316,7 +1316,6 @@ public enum DefaultBookConfigHelper
                     "harvestcraft:stockitem_x3_listAllmeatraw",
                     "harvestcraft:stockitem_x3_listAllveggie",
                     "harvestcraft:stockitem_x3_minecraft_bone",
-                    "harvestcraft:string",
                     "harvestcraft:stuffedduckitem",
                     "harvestcraft:stuffedeggplantitem",
                     "harvestcraft:stuffedmushroomitem",
@@ -1375,8 +1374,6 @@ public enum DefaultBookConfigHelper
                     "harvestcraft:weekendpicnicitem",
                     "harvestcraft:well",
                     "harvestcraft:wool_0",
-                    "harvestcraft:wovencottonitem",
-                    "harvestcraft:wovencottonitem_x3",
                     "harvestcraft:zeppoleitem",
                     "harvestcraft:zestyzucchiniitem",
                     "harvestcraft:zucchinibakeitem",
@@ -1913,7 +1910,10 @@ public enum DefaultBookConfigHelper
                     "harvestcraft:hardenedleatherchestitem",
                     "harvestcraft:hardenedleatherhelmitem",
                     "harvestcraft:hardenedleatheritem",
-                    "harvestcraft:hardenedleatherleggingsitem"
+                    "harvestcraft:hardenedleatherleggingsitem",
+                    "harvestcraft:string",
+                    "harvestcraft:wovencottonitem",
+                    "harvestcraft:wovencottonitem_x3"
             },
             "Tailor book"
     ),
