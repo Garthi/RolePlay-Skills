@@ -119,6 +119,7 @@ public class CommonProxy
             if (RecipeBook.getInstance().addRecipesFromBook(entityPlayerMP, (AbstractItem)currentItem)) {
                 // remove book from main hand
                 entityPlayerMP.inventory.getCurrentItem().setCount(0);
+                event.setCanceled(true);
             }
         } else if (currentItem.getUnlocalizedName().equals("item.society.book_forgetting")) {
             RecipeBook recipeBook = RecipeBook.getInstance();
@@ -129,6 +130,7 @@ public class CommonProxy
 
             try {
                 ConfigBookDatabase.get().removeBookUsage(entityPlayerMP.getName());
+                event.setCanceled(true);
             } catch (NotLoadedException e) {
                 e.printStackTrace();
             }
