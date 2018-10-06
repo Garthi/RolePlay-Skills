@@ -135,6 +135,10 @@ public enum DefaultBookConfigHelper
             "book_baker",
             new String[]{
                     "minecraft:bread",
+                    "harvestcraft:freshmilkitem_cropAlmond",
+                    "harvestcraft:freshmilkitem_minecraft_milk_bucket",
+                    "harvestcraft:freshwateritem_listAllwater",
+                    "harvestcraft:freshwateritem_minecraft_water_bucket",
                     "harvestcraft:pbandjitem",
                     "harvestcraft:homestylelunchitem",
                     "harvestcraft:grilledcheeseitem",
@@ -233,6 +237,10 @@ public enum DefaultBookConfigHelper
     BUTCHER(
             "book_butcher",
             new String[]{
+                    "harvestcraft:freshmilkitem_cropAlmond",
+                    "harvestcraft:freshmilkitem_minecraft_milk_bucket",
+                    "harvestcraft:freshwateritem_listAllwater",
+                    "harvestcraft:freshwateritem_minecraft_water_bucket",
                     "harvestcraft:mettbrotchenitem",
                     "harvestcraft:chickenandwafflesitem",
                     "harvestcraft:chickencelerycasseroleitem",
@@ -330,6 +338,10 @@ public enum DefaultBookConfigHelper
     BARKEEPER(
             "book_barkeeper",
             new String[]{
+                    "harvestcraft:freshmilkitem_cropAlmond",
+                    "harvestcraft:freshmilkitem_minecraft_milk_bucket",
+                    "harvestcraft:freshwateritem_listAllwater",
+                    "harvestcraft:freshwateritem_minecraft_water_bucket",
                     "harvestcraft:ironbrewitem",
                     "harvestcraft:applejuiceitem",
                     "harvestcraft:fruitpunchitem",
@@ -844,6 +856,10 @@ public enum DefaultBookConfigHelper
             "book_confectioner",
             new String[]{
                     "minecraft:cake",
+                    "harvestcraft:freshmilkitem_cropAlmond",
+                    "harvestcraft:freshmilkitem_minecraft_milk_bucket",
+                    "harvestcraft:freshwateritem_listAllwater",
+                    "harvestcraft:freshwateritem_minecraft_water_bucket",
                     "harvestcraft:lamingtonitem",
                     "harvestcraft:fruitcrumbleitem",
                     "harvestcraft:applepieitem",
@@ -916,6 +932,10 @@ public enum DefaultBookConfigHelper
                     "minecraft:golden_apple",
                     "minecraft:rabbit_stew_from_brown_mushroom",
                     "minecraft:rabbit_stew_from_red_mushroom",
+                    "harvestcraft:freshmilkitem_cropAlmond",
+                    "harvestcraft:freshmilkitem_minecraft_milk_bucket",
+                    "harvestcraft:freshwateritem_listAllwater",
+                    "harvestcraft:freshwateritem_minecraft_water_bucket",
                     "harvestcraft:akutuqitem",
                     "harvestcraft:almondbutteritem",
                     "harvestcraft:anchovypepperonipizzaitem",
@@ -1057,10 +1077,6 @@ public enum DefaultBookConfigHelper
                     "harvestcraft:extremechiliitem",
                     "harvestcraft:figbaritem",
                     "harvestcraft:fivespiceitem_x5",
-                    "harvestcraft:freshmilkitem_cropAlmond",
-                    "harvestcraft:freshmilkitem_minecraft_milk_bucket",
-                    "harvestcraft:freshwateritem_listAllwater",
-                    "harvestcraft:freshwateritem_minecraft_water_bucket",
                     "harvestcraft:friedeggitem",
                     "harvestcraft:friedgreentomatoesitem",
                     "harvestcraft:friedonionsitem",
@@ -1398,10 +1414,12 @@ public enum DefaultBookConfigHelper
     FISH_COOK(
             "book_fish_cook",
             new String[]{
-                    "harvestcraft:freshmilkitem_cropAlmond",
-                    "harvestcraft:freshmilkitem_minecraft_milk_bucket",
                     "betterfishing:slicingfish",
                     "betterfishing:fish_slice",
+                    "harvestcraft:freshmilkitem_cropAlmond",
+                    "harvestcraft:freshmilkitem_minecraft_milk_bucket",
+                    "harvestcraft:freshwateritem_listAllwater",
+                    "harvestcraft:freshwateritem_minecraft_water_bucket",
                     "harvestcraft:fishandchipsitem",
                     "harvestcraft:fishdinneritem",
                     "harvestcraft:fishlettucewrapitem",
@@ -1514,6 +1532,10 @@ public enum DefaultBookConfigHelper
     ICE_CREAM_MAKER(
             "book_ice_cream_maker",
             new String[]{
+                    "harvestcraft:freshmilkitem_cropAlmond",
+                    "harvestcraft:freshmilkitem_minecraft_milk_bucket",
+                    "harvestcraft:freshwateritem_listAllwater",
+                    "harvestcraft:freshwateritem_minecraft_water_bucket",
                     "harvestcraft:caramelicecreamitem",
                     "harvestcraft:cherryicecreamitem",
                     "harvestcraft:chocolateicecreamitem",
@@ -1988,6 +2010,8 @@ public enum DefaultBookConfigHelper
             new String[]{
                     "harvestcraft:freshmilkitem_cropAlmond",
                     "harvestcraft:freshmilkitem_minecraft_milk_bucket",
+                    "harvestcraft:freshwateritem_listAllwater",
+                    "harvestcraft:freshwateritem_minecraft_water_bucket",
                     "harvestcraft:asparagussoupitem", 
                     "harvestcraft:beetsoupitem",
                     "harvestcraft:blazingsoupitem",
