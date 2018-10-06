@@ -62,15 +62,19 @@ public class RecipeBook
         }
 
         List<IRecipe> removeRecipes = new ArrayList<>();
+        List<IRecipe> addRecipes = new ArrayList<>();
         
         for (IRecipe irecipe : ForgeRegistries.RECIPES) {
             if (!this.isRecipeAllow(irecipe)) {
                 removeRecipes.add(irecipe);
+            } else {
+                addRecipes.add(irecipe);
             }
         }
 
         // remove all not needed recipes
         player.getRecipeBook().remove(removeRecipes, player);
+        player.getRecipeBook().add(addRecipes, player);
     }
     
     public boolean addRecipesFromBook(EntityPlayerMP entityPlayerMP, AbstractItem book)
