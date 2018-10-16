@@ -1,3 +1,7 @@
+
+[![GitHub license](https://img.shields.io/github/license/Garthi/Society.svg)](https://github.com/Garthi/Society/blob/master/LICENSE)
+
+
 # Society
 Minecraft skills for Roleplay
 
